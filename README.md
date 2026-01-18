@@ -26,55 +26,55 @@ The dataset included the following variables:
 
 ### Patient Demographic Details
 
-•	Age
-•	Gender (0: Male, 1: Female)
-•	Ethnicity (0: Caucasian, 1: African American, 2: Asian, 3: Other)
-•	Education Level (0: None, 1: High School, 2: Bachelors, 3: Higher)
+* Age
+* Gender (0: Male, 1: Female)
+* Ethnicity (0: Caucasian, 1: African American, 2: Asian, 3: Other)
+* Education Level (0: None, 1: High School, 2: Bachelors, 3: Higher)
 
 ### Lifestyle Factors
 
-•	BMI
-•	Smoking Status (0: No, 1: Yes)
-•	Physical activity
-•	DietQuality
-•	SleepQuality
+* BMI
+* Smoking Status (0: No, 1: Yes)
+* Physical activity
+* DietQuality
+* SleepQuality
 
 ### Environmental and Allergy Factors
 
-•	PollutionExposure
-•	PollenExposure
-•	DustExposure
-•	PetAllergy
+* PollutionExposure
+* PollenExposure
+* DustExposure
+* PetAllergy
 
 ### Medical History
 
-•	FamilyHistoryAsthma (0: No, 1: Yes)
-•	HistoryOfAllergies (0: No, 1: Yes)
-•	Eczema (0: No, 1: Yes)
-•	HayFever (0: No, 1: Yes)
-•	GastroesophagealReflux (0: No, 1: Yes)
+* FamilyHistoryAsthma (0: No, 1: Yes)
+* HistoryOfAllergies (0: No, 1: Yes)
+* Eczema (0: No, 1: Yes)
+* HayFever (0: No, 1: Yes)
+* GastroesophagealReflux (0: No, 1: Yes)
 
 ### Clinical Measurements
 
-•	LungFunctionFEV1
-•	LungFunctionFVC
+* LungFunctionFEV1
+* LungFunctionFVC
 
 ### Symptoms
 
-•	Wheezing (0: No, 1: Yes)
-•	ShortnessOfBreath (0: No, 1: Yes)
-•	ChestTightness (0: No, 1: Yes)
-•	Coughing (0: No, 1: Yes)
-•	NighttimeSymptoms (0: No, 1: Yes)
-•	ExerciseInduced (0: No, 1: Yes)
+* Wheezing (0: No, 1: Yes)
+* ShortnessOfBreath (0: No, 1: Yes)
+* ChestTightness (0: No, 1: Yes)
+* Coughing (0: No, 1: Yes)
+* NighttimeSymptoms (0: No, 1: Yes)
+* ExerciseInduced (0: No, 1: Yes)
 
 ### Diagnosis Information
 
-•	Diagnosis (0: No, 1: Yes)
+* Diagnosis (0: No, 1: Yes)
 
 ### Confidential Information
 
-•	DoctorInCharge
+* DoctorInCharge
 
 DoctorInCharge is confidential information, however includes “Dr_Confid” as the value for all patients. All data is anonymised, with no personally identifiable information. 
 
@@ -87,16 +87,16 @@ To achieved the outlined objectives, this project will focus on the following ke
 ### Business requirement one: Data visualisation and correlation study (conventional Analysis)
 
 To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, and symptom-based factors associated with lung function measures (FEV1 and FVC).
-•	Perform exploratory data analysis (EDA) to assess distributions, trends, and relationships between patient attributes and lung function.
-•	Conduct correlation and statistical analyses to determine which factors are most strongly associated with variations in FEV1 and FVC.
-•	Produce clear, interpretable visualizations (e.g., correlation heatmaps, boxplots, scatter plots) to support clinical understanding.
+* Perform exploratory data analysis (EDA) to assess distributions, trends, and relationships between patient attributes and lung function.
+* Conduct correlation and statistical analyses to determine which factors are most strongly associated with variations in FEV1 and FVC.
+* Produce clear, interpretable visualizations (e.g., correlation heatmaps, boxplots, scatter plots) to support clinical understanding.
 Business Value: This analysis enables physicians and stakeholders to understand the primary drivers of lung function decline, supporting clinical insight and hypothesis generation prior to model deployment.
 
 ### Business requirement two: Prognosis Prediction via Supervised Learning (Machine Learning)
 
 To develop a predictive model that classifies patients based on lung function status and overall asthma prognosis.
-•	Build and evaluate classification and/or regression models to predict lung function outcomes (e.g., good vs. poor lung function derived from FEV1 and FVC thresholds).
-•	Use patient attributes as inputs to identify individuals at higher risk of adverse asthma outcomes.
+* Build and evaluate classification and/or regression models to predict lung function outcomes (e.g., good vs. poor lung function derived from FEV1 and FVC thresholds).
+* Use patient attributes as inputs to identify individuals at higher risk of adverse asthma outcomes.
 Business Value: This capability supports early risk stratification, enabling preventative interventions for patients likely to experience poor lung function and worse asthma prognosis.
 
 ## Hypothesis and how to validate?
