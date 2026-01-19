@@ -1,22 +1,8 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API 
-
 # Asthma Burden
 
 ## Project Overview
 
-This project is a data analytics and machine learning application designed to explore, analyse, and interpret patient health data related to asthma. The objective is to identify key factors associated with lung function, and to support the prediction of asthma prognosis. The insights generated aim to enable early identification of high-risk individuals and support preventative, evidence-based clinical decision-making.
+This project is a data analytics and machine learning application designed to explore, analyse, and interpret patient health data related to asthma. The objective is to develop a predictive model that identifies patient with asthma. The insights generated aim to enable early identification of asthma  and support preventative, evidence-based clinical decision-making. Note, the original objective of this project was to identify factors associated with clinical measures of disease (lung function) and prognosis; however, given the dataset includes data for 2392 invidivuals, of which 124 had asthma, this was amended.
 
 ## Dataset Content
 
@@ -76,28 +62,34 @@ The dataset included the following variables:
 
 * DoctorInCharge
 
-DoctorInCharge is confidential information, however includes “Dr_Confid” as the value for all patients. All data is anonymised, with no personally identifiable information. 
+DoctorInCharge is confidential information, however includes “Dr_Confid” as the value for all patients. All data is anonymised, with no personally identifiable information.
 
 ## Business Requirements
 
-The client seeks to better understand the prognosis of patients with asthma in order to identify high-risk individuals at an early stage. Early identification enables preventative interventions that can reduce the likelihood of severe outcomes. The objective of this project is to develop a machine learning model that predicts asthma prognosis by identifying key demographic, lifestyle, environmental, allergy-related, medical history, and symptom-based factors associated with lung function indicators (FEV1 and FVC).
+The client seeks to improve early identification of patients with asthma within a large general patient population. Because asthma cases represent a small minority, the project focuses on understanding the factors associated with asthma presence. Early detection enables targeted assessment and preventative interventions for individuals who may be at risk but not yet recognised clinically.
 
-To achieved the outlined objectives, this project will focus on the following key requirements:
+The objective of this project is to develop a machine learning model that predicts asthma status, using demographic, lifestyle, environmental, allergy‑related, medical history, and symptom‑based factors, alongside lung‑function indicators such as FEV1 and FVC.
+To achieve these objectives, the project will focus on the following key requirements:
 
 ### Business requirement one: Data visualisation and correlation study (conventional Analysis)
 
-To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, and symptom-based factors associated with lung function measures (FEV1 and FVC).
-* Perform exploratory data analysis (EDA) to assess distributions, trends, and relationships between patient attributes and lung function.
-* Conduct correlation and statistical analyses to determine which factors are most strongly associated with variations in FEV1 and FVC.
+To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status.
+
+* Perform exploratory data analysis (EDA) to assess distributions, trends, and relationships between patient attributes and asthma status.
+* Conduct correlation and statistical analyses to determine which factors are most strongly associated with asthma status.
 * Produce clear, interpretable visualizations (e.g., correlation heatmaps, boxplots, scatter plots) to support clinical understanding.
-Business Value: This analysis enables physicians and stakeholders to understand the primary drivers of lung function decline, supporting clinical insight and hypothesis generation prior to model deployment.
+
+Business Value: This analysis enables physicians and stakeholders to understand the primary drivers of asthma status, supporting clinical insight and hypothesis generation prior to model deployment.
 
 ### Business requirement two: Prognosis Prediction via Supervised Learning (Machine Learning)
 
-To develop a predictive model that classifies patients based on lung function status and overall asthma prognosis.
-* Build and evaluate classification and/or regression models to predict lung function outcomes (e.g., good vs. poor lung function derived from FEV1 and FVC thresholds).
-* Use patient attributes as inputs to identify individuals at higher risk of adverse asthma outcomes.
-Business Value: This capability supports early risk stratification, enabling preventative interventions for patients likely to experience poor lung function and worse asthma prognosis.
+To develop a predictive model that identifies patients with asthma within a highly imbalanced dataset.
+
+* Build and evaluate classification models to predict asthma status using patient attributes and lung‑function measures.
+* Apply imbalance‑handling techniques (e.g., class weighting, oversampling, SMOTE, anomaly‑style detection) to improve sensitivity to asthma cases.
+* Assess model performance using recall, precision, F1‑score, ROC‑AUC, or PR‑AUC.
+
+Business Value: This capability supports early detection of individuals who may have undiagnosed or under‑recognised asthma, enabling timely clinical follow‑up and preventative interventions. 
 
 ## Hypothesis and how to validate?
 
