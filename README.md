@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a data analytics and machine learning application designed to explore, analyse, and interpret patient health data related to asthma. The objective is to develop a predictive model that identifies patient with asthma. The insights generated aim to enable early identification of asthma  and support preventative, evidence-based clinical decision-making. Note, the original objective of this project was to identify factors associated with clinical measures of disease (lung function) and prognosis; however, given the dataset includes data for 2392 invidivuals, of which 124 had asthma, this was amended.
+This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma, the scope was revised to focus on binary asthma prediction. The resulting analysis supports early identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
 
 ## Dataset Content
 
@@ -10,59 +10,32 @@ Data from the publicly available [Asthma Disease Dataset]( https://www.kaggle.co
 
 The dataset included the following variables:
 
-### Patient Demographic Details
-
-* Age
-* Gender (0: Male, 1: Female)
-* Ethnicity (0: Caucasian, 1: African American, 2: Asian, 3: Other)
-* Education Level (0: None, 1: High School, 2: Bachelors, 3: Higher)
-
-### Lifestyle Factors
-
-* BMI
-* Smoking Status (0: No, 1: Yes)
-* Physical activity
-* DietQuality
-* SleepQuality
-
-### Environmental and Allergy Factors
-
-* PollutionExposure
-* PollenExposure
-* DustExposure
-* PetAllergy
-
-### Medical History
-
-* FamilyHistoryAsthma (0: No, 1: Yes)
-* HistoryOfAllergies (0: No, 1: Yes)
-* Eczema (0: No, 1: Yes)
-* HayFever (0: No, 1: Yes)
-* GastroesophagealReflux (0: No, 1: Yes)
-
-### Clinical Measurements
-
-* LungFunctionFEV1
-* LungFunctionFVC
-
-### Symptoms
-
-* Wheezing (0: No, 1: Yes)
-* ShortnessOfBreath (0: No, 1: Yes)
-* ChestTightness (0: No, 1: Yes)
-* Coughing (0: No, 1: Yes)
-* NighttimeSymptoms (0: No, 1: Yes)
-* ExerciseInduced (0: No, 1: Yes)
-
-### Diagnosis Information
-
-* Diagnosis (0: No, 1: Yes)
-
-### Confidential Information
-
-* DoctorInCharge
-
-DoctorInCharge is confidential information, however includes “Dr_Confid” as the value for all patients. All data is anonymised, with no personally identifiable information.
+| Category | Feature | Description / Notes |
+| ---------- | --------- | ------------------- |
+| **Lifestyle Factors** | BMI | Body Mass Index |
+| | Smoking Status | 0: No, 1: Yes |
+| | Physical activity | Frequency or intensity of physical activity, ranging from 0 to 10 |
+| | DietQuality | Score indicating diet quality, ranging from 0 to 10 |
+| | SleepQuality | Score indicating sleep quality, ranging from 4 to 10 |
+| **Environmental and Allergy Factors** | PollutionExposure | Level of exposure to air pollution, ranging from 0 to 10 |
+| | PollenExposure | Level of exposure to pollen, ranging from 0 to 10 |
+| | DustExposure | Level of exposure to dust, ranging from 0 to 10 |
+| | PetAllergy | 0: No, 1: Yes |
+| **Medical History** | FamilyHistoryAsthma | 0: No, 1: Yes |
+| | HistoryOfAllergies | 0: No, 1: Yes |
+| | Eczema | 0: No, 1: Yes |
+| | HayFever | 0: No, 1: Yes |
+| | GastroesophagealReflux | 0: No, 1: Yes |
+| **Clinical Measurements** | LungFunctionFEV1 | Forced expiratory volume in 1 second, ranging from 1 to 4 litres |
+| | LungFunctionFVC | Forced vital capacity, raning from 1.5 to 6 litres |
+| **Symptoms** | Wheezing | 0: No, 1: Yes |
+| | ShortnessOfBreath | 0: No, 1: Yes |
+| | ChestTightness | 0: No, 1: Yes |
+| | Coughing | 0: No, 1: Yes |
+| | NighttimeSymptoms | 0: No, 1: Yes |
+| | ExerciseInduced | 0: No, 1: Yes |
+| **Diagnosis Information** | Diagnosis | 0: No, 1: Yes |
+| **Confidential Information** | DoctorInCharge | Name of the doctor in charge (confidential)
 
 ## Business Requirements
 
@@ -71,42 +44,77 @@ The client seeks to improve early identification of patients with asthma within 
 The objective of this project is to develop a machine learning model that predicts asthma status, using demographic, lifestyle, environmental, allergy‑related, medical history, and symptom‑based factors, alongside lung‑function indicators such as FEV1 and FVC.
 To achieve these objectives, the project will focus on the following key requirements:
 
-### Business requirement one: Data visualisation and correlation study (conventional Analysis)
+### Business requirement one: Data visualisation and correlation study (Conventional Analysis)
 
-To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status.
-
-* Perform exploratory data analysis (EDA) to assess distributions, trends, and relationships between patient attributes and asthma status.
-* Conduct correlation and statistical analyses to determine which factors are most strongly associated with asthma status.
-* Produce clear, interpretable visualizations (e.g., correlation heatmaps, boxplots, scatter plots) to support clinical understanding.
+Identify the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based, and clinical factors most strongly associated with asthma status. Provide visual and statistical insights to support clinical understanding of the primary drivers of asthma prior to model development.
 
 Business Value: This analysis enables physicians and stakeholders to understand the primary drivers of asthma status, supporting clinical insight and hypothesis generation prior to model deployment.
 
-### Business requirement two: Prognosis Prediction via Supervised Learning (Machine Learning)
+### Business requirement two: Asthma Prediction via Supervised Learning (Machine Learning)
 
-To develop a predictive model that identifies patients with asthma within a highly imbalanced dataset.
+Develop a machine learning model capable of predicting whether an individual has asthma using an array of features. The model should account for class imbalance and prioritise sensitivity to asthma cases to support early identification and preventative clinical decision-making.
+
+Business Value: This capability supports early detection of individuals who may have undiagnosed or under‑recognised asthma, enabling timely clinical follow‑up and preventative interventions.
+
+## Data Visualization and ML tasks for the projects business requirements, and relevant hypotheses
+
+### Business Requirement One
+
+To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing. This analysis hypothesises that demographic, lifestyle, environmental and allergy, medical history, clinical measurements and symptoms will be associated with asthma diagnosis.
+
+* Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients.
+* Visualise key relationships using interpretable plots such as boxplots, bar charts, and correlation heatmaps.
+* Confirm findings by reviewing feature importance and model coefficients from trained machine learning models.
+
+### Business Requirement Two
+
+To develop a predictive model that identifies patients with asthma within a highly imbalanced dataset. This is important, as the dataset reflects a real-world population of patients, with patients with asthma reflecting a small sample. Demonstrating the detection of asthma cases within an imbalanced dataset is critical for real-world screening and early identification.
 
 * Build and evaluate classification models to predict asthma status using patient attributes and lung‑function measures.
 * Apply imbalance‑handling techniques (e.g., class weighting, oversampling, SMOTE, anomaly‑style detection) to improve sensitivity to asthma cases.
 * Assess model performance using recall, precision, F1‑score, ROC‑AUC, or PR‑AUC.
 
-Business Value: This capability supports early detection of individuals who may have undiagnosed or under‑recognised asthma, enabling timely clinical follow‑up and preventative interventions. 
+## Business Case
 
-## Hypothesis and how to validate?
+The overall aim of this project to develop a supervised machine learning model that predicts whether a patient would have asthma or not. The model should provide a probability of asthma diagnoses for a given patient, to aid management and treatment.
 
-* List here your project hypothesis(es) and how you envision validating it (them)
+### Business Requirement One (Conventional)
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
+As mentioned previously, exploratory data analyses was performed to visualse the distrubution and group differences between asthma and non-asthma patients. Contingecy tables were populated for each binary feature against asthma diagnoses. Additionally, chi-square/Fisher were performed to assess the associations between binary features and asthma_status. For continuous features, associations were tested using bivariate analyses, t-test or Mann-Whitney, based on normality. A p-value of <0.05 was deemed significant.
 
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+### Buiness Requirement Two (Machine Learning)
 
-## ML Business Case
-
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+* Goal: To predict if a patient will have asthma (asthma_status). Probability of asthma diagnoses to be reported.
+* Model Type: Supervised - Binary Classification
+* Inputs: Demographic, Lifestyle, Environmental and Allergy, Medical History, Clinical measurements, and Symptom features
+* Model Choice: XXX
+* Success Metrics (Training and Test):
+  * Recall for asthma ≥ 0.80 – to minimize false negatives (undiagnosed asthma cases predicted as non-asthma), ensuring sensitive detection of patients who actually have asthma.
+  * Precision for asthma ≥ 0.60 – to reduce false positives, avoiding over-identifying healthy patients as asthmatic.
+* Failure Conditions:
+  * Overfitting - Model performs well on training data but poorly on test data.
+  * Imbalanced performance - Large differences between recall and precision.
+  * Unstable predictions - Variable outputs.
+* Output Definition:
+  * Binary prediction (0 = no asthma, 1 = asthma).
+  * Probability of asthma (e.g., 0.76 = 76% chance of having asthma) to assist clinicians in risk assessment and prioritization.
 
 ## Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+
+## User Stories
+
+These user stories outline the needs of various stakeholders, ensuring that the project delivers actionable insights and supports both clinical and technical decision-making.
+
+| Stakeholder | User Story | Goal / Outcome |
+| ------------- | ------------ | ---------------- |
+| Non-technical stakeholder (e.g.) healthcare manager) | I want a clear summary of the project’s objectives, dataset, and key requirements | So that I can quickly understand the purpose of the project and the insights it provides without needing technical expertise. |
+| Data analyst | I want to investigate the relationships between specific patient features and asthma diagnosis using visualizations and exploratory analyses | So that I can uncover patterns, identify important risk factors, and generate evidence-based insights for healthcare teams. |
+| Clinical researcher / Healthcare Analyst | I want to examine the project hypotheses about asthma risk factors and validate them with charts, statistics, and correlation analyses | So that I can determine which features are genuinely associated with asthma and support data-driven clinical conclusions. |
+| Healthcare provider | I want to input a patient’s information and receive a predicted probability of asthma along with risk indicators | So that I can prioritize patients for follow-up, screening, or preventative interventions. |
+| Technical reviewer / data scientist | I want to inspect the machine learning model, including key features, structure, and performance metrics | So that I can evaluate the model’s reliability, interpretability, and suitability for clinical decision support. |
 
 ## Unfixed Bugs
 
