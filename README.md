@@ -35,7 +35,7 @@ The dataset included the following variables:
 | | NighttimeSymptoms | 0: No, 1: Yes |
 | | ExerciseInduced | 0: No, 1: Yes |
 | **Diagnosis Information** | Diagnosis | 0: No, 1: Yes |
-| **Confidential Information** | DoctorInCharge | Name of the doctor in charge (confidential)
+| **Confidential Information** | DoctorInCharge | Name of the doctor in charge (confidential) |
 
 ## Business Requirements
 
