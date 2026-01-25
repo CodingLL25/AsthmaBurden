@@ -71,7 +71,7 @@ To better understand the factors influencing asthma risk, four key hypotheses we
 
 ### Business Requirement One
 
-To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing. 
+To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing.
 
 * Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients.
 * Visualise key relationships using interpretable plots such as boxplots, bar charts, and correlation heatmaps.
