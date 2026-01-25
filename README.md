@@ -56,11 +56,22 @@ Develop a machine learning model capable of predicting whether an individual has
 
 Business Value: This capability supports early detection of individuals who may have undiagnosed or under‑recognised asthma, enabling timely clinical follow‑up and preventative interventions.
 
-## Data Visualization and ML tasks for the projects business requirements, and relevant hypotheses
+## Hypothesis and Validation
+
+To better understand the factors influencing asthma risk, four key hypotheses were formulated based on domain knowledge and the available data. Each hypothesis focuses on a variable expected to impact asthma status.
+
+| Hypothesis | Rationale | Validation |
+| ------------ | ----------- | ------------ |
+| H1: Poorer clinical factors (lower LungFunctionFEV1 or LungFunctionFVX) is associated with asthma | Reduced airflow and obstruction are classic features of asthma | Compare distributions of lung function metrics by Diagnosis; use of t-tests or Mann-Whitney to confirm differences |
+| H2: Presence of symptoms (Wheezing, ShortnessOfBreath, ChestTightness, Coughing, NighttimeSymptoms) is associated with asthma | Symptoms like wheeze are clinical hallmarks of asthma and likely predictive of diagnosis | Compare symptom prevalence by Diagnosis; assess association with Chi‑square tests |
+| H3: Smoking exposure is associated with asthma | Smoking and secondhand smoke irritate airways and can exacerbate or trigger asthma symptoms | Compare SmokingHistory by Diagnosis; statistical tests for association |
+| H4: Higher exposure to dust or pollutants is associated with higher asthma risk | Environmental irritants can trigger asthma attacks or chronic inflammation | Compare PollutionExposure, PollenExposure and DustExposure by Diagnosis; statistical test for differences |
+
+## Data Visualization and ML tasks for the projects business requirements
 
 ### Business Requirement One
 
-To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing. This analysis hypothesises that demographic, lifestyle, environmental and allergy, medical history, clinical measurements and symptoms will be associated with asthma diagnosis.
+To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing. 
 
 * Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients.
 * Visualise key relationships using interpretable plots such as boxplots, bar charts, and correlation heatmaps.
@@ -101,8 +112,37 @@ As mentioned previously, exploratory data analyses was performed to visualse the
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+The goal of the dashboard is to provide comprehensive insights and intelligency to support real-world prediction of asthma status. There are multiple target statekholders, with their goal/outcome outlined in User Stories.
+
+### Page One: Project Summary
+
+* Purpose: To provide a clear overview of the project in terms of:
+  * Project Introduction
+  * Project Terms
+  * Dataset Overview and checkbox to see first 10 rows (rows representing a unique patient)
+  * Business Requirements
+
+### Page Two: Asthma Status Study
+
+* Purpose: To provide an overview of key features associated with asthma status (Business Requirement One). The aim of this page is to help stakeholders understand associations with asthma status with clear visual insights. Page to be broken down by:
+  * Table of results for continuous features
+  * Table of results for binary features
+  * Checkbox to see PPS score heatmap
+
+### Page Three: Project Hypotheses and Validation
+
+* Purpose: To describe the project hypotheses and validation process.
+
+### Page Four: Asthma Status Prediction Tool
+
+* Purpose: To show the classification output for deriving asthma status (Business Requirement Two):
+  * Widget input fields for relevant features for deriving asthma status; allow stakeholder to input data and present likely asthma status.
+
+### Page Five: Asthma Status Prediction - Model Insights
+
+* Purpose: To show predictive model performance and interpretation:
+  * Overview of the model objective (Business Requirement Two)
+  * Overview of ML pipelines used and insights into model performance
 
 ## User Stories
 
