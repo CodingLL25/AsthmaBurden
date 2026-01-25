@@ -63,14 +63,14 @@ Business Value: This capability supports early detection of individuals who may 
 To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing. This analysis hypothesises that demographic, lifestyle, environmental and allergy, medical history, clinical measurements and symptoms will be associated with asthma diagnosis.
 
 * Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients.
-* Visualise key relationships using interpretable plots such as boxplots, bar charts, and correlation heatmaps.
+* Visualise key relationships using interpretable plots such as boxplots, bar charts, and predictive power predictive score (PPS) heatmaps.
 * Confirm findings by reviewing feature importance and model coefficients from trained machine learning models.
 
 ### Business Requirement Two
 
 To develop a predictive model that identifies patients with asthma within a highly imbalanced dataset. This is important, as the dataset reflects a real-world population of patients, with patients with asthma reflecting a small sample. Demonstrating the detection of asthma cases within an imbalanced dataset is critical for real-world screening and early identification.
 
-* Build and evaluate classification models to predict asthma status using patient attributes and lung‑function measures.
+* Build and evaluate classification models to predict asthma status using all features in the dataset.
 * Apply imbalance‑handling techniques (e.g., class weighting, oversampling, SMOTE, anomaly‑style detection) to improve sensitivity to asthma cases.
 * Assess model performance using recall, precision, F1‑score, ROC‑AUC, or PR‑AUC.
 
