@@ -37,7 +37,7 @@ The dataset included the following variables:
 | | HayFever | 0: No, 1: Yes |
 | | GastroesophagealReflux | 0: No, 1: Yes |
 | **Clinical Measurements** | LungFunctionFEV1 | Forced expiratory volume in 1 second, ranging from 1 to 4 litres |
-| | LungFunctionFVC | Forced vital capacity, raning from 1.5 to 6 litres |
+| | LungFunctionFVC | Forced vital capacity, ranging from 1.5 to 6 litres |
 | **Symptoms** | Wheezing | 0: No, 1: Yes |
 | | ShortnessOfBreath | 0: No, 1: Yes |
 | | ChestTightness | 0: No, 1: Yes |
