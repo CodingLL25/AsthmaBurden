@@ -1,8 +1,18 @@
-# Asthma Burden
+# Asthma Status
+
+![Lungs illustration](documentation/lungs-unsplash.jpg)
 
 ## Project Overview
 
-This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma, the scope was revised to focus on binary asthma prediction. The resulting analysis supports early identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
+This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The resulting analysis supports early identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
+
+### Types of Asthma
+
+* Allergic Asthma: Triggered by allergens such as pollen, dust mites, mold, or pet dander. Often begins in childhood and is associated with other allergic conditions.
+* Non-Allergic Asthma: Symptoms are commonly triggered by infections, cold air, stress, or air pollution and often develop in adulthood.
+* Exercise-Induced Bronchoconstriction: Airway narrowing triggered by physical activity, especially in cold or dry environments.
+* Severe Asthma: Remains poorly controlled despite treatment.
+* Eosinophillic Asthma: Characterised by frequent exacerbations (worsening of asthma) and elevant eosinophils (type of biomarker).
 
 ## Dataset Content
 
@@ -41,8 +51,7 @@ The dataset included the following variables:
 
 The client seeks to improve early identification of patients with asthma within a large general patient population. Because asthma cases represent a small minority, the project focuses on understanding the factors associated with asthma presence. Early detection enables targeted assessment and preventative interventions for individuals who may be at risk but not yet recognised clinically.
 
-The objective of this project is to develop a machine learning model that predicts asthma status, using demographic, lifestyle, environmental, allergy‑related, medical history, and symptom‑based factors, alongside lung‑function indicators such as FEV1 and FVC.
-To achieve these objectives, the project will focus on the following key requirements:
+The objective of this project is to develop a machine learning model that predicts asthma status, using demographic, lifestyle, environmental, allergy‑related, medical history, and symptom‑based factors, alongside lung‑function indicators such as FEV1 and FVC. To achieve these objectives, the project will focus on the following key requirements:
 
 ### Business requirement one: Data visualisation and correlation study (Conventional Analysis)
 
@@ -194,6 +203,8 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 ### Media
 
 None.
+
+Title: Circulatory system of the heart and lungs Creator: Wetselaar-Whittaker, J Date: 1955-11-05 Providing institution: Universitaire Bibliotheken Leiden Aggregator: Dutch Collections for Europe Providing Country: Netherlands Public Domain Circulatory system of the heart and lungs by Wetselaar-Whittaker, J - Leiden University Libraries, Netherlands - Public Domain. https://www.europeana.eu/item/744/item_3461740
 
 ## Acknowledgements (optional)
 
