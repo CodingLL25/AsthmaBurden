@@ -1,4 +1,4 @@
-# Asthma Status
+# Asthma Burden
 
 ![Lungs illustration](documentation/lungs-unsplash.jpg)
 
