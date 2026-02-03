@@ -155,7 +155,7 @@ The goal of the dashboard is to provide comprehensive insights and intelligency 
 
 ## User Stories
 
-These user stories outline the needs of various stakeholders, ensuring that the project delivers actionable insights and supports both clinical and technical decision-making.
+These user stories outline the needs of various stakeholders, ensuring that the project delivers actionable insights and supports both clinical and technical decision-making. User stories explored in more detail, particularly for the data analyst covered [within the projects tab](https://github.com/users/CodingLL25/projects/12).
 
 | Stakeholder | User Story | Goal / Outcome |
 | ------------- | ------------ | ---------------- |
@@ -190,22 +190,23 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
+Guidance on best practices from:
 
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+* [towardsdatascience](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/) - understanding hyperparameter optimisation
+* [geeksforgeeks](https://www.geeksforgeeks.org/machine-learning/random-forest-hyperparameter-tuning-in-python/) - understanding hyperparameter optimisation
 
 ### Content
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+Example content from:
+
+* [Churnonmeter](https://github.com/CodingLL25/churnometer/tree/main) - The Code Institutes walkthrough project for portfolio five
+* [LoanGuard](https://github.com/kathrinmzl/LoanGuard/tree/main) - this was referenced throughout the development of AsthmaBurden as a great example of meeting project expectations, with clear overviews of the steps taken and insight into decision making behind predictive analytics.
 
 ### Media
 
-None.
-
-Title: Circulatory system of the heart and lungs Creator: Wetselaar-Whittaker, J Date: 1955-11-05 Providing institution: Universitaire Bibliotheken Leiden Aggregator: Dutch Collections for Europe Providing Country: Netherlands Public Domain Circulatory system of the heart and lungs by Wetselaar-Whittaker, J - Leiden University Libraries, Netherlands - Public Domain. https://www.europeana.eu/item/744/item_3461740
+* [Unsplash](https://unsplash.com/) for free images to use
+* [Europeana](https://www.europeana.eu/item/744/item_3461740) for the lungs image used in the README file
 
 ## Acknowledgements (optional)
 
-* Thank the people who provided support through this project.
+One final thank you to [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for her endless support and guidance.
