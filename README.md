@@ -86,6 +86,9 @@ To identify and visualize the key demographic, lifestyle, environmental, allergy
 * Visualise key relationships using interpretable plots such as boxplots, bar charts, and predictive power predictive score (PPS) heatmaps.
 * Confirm findings by reviewing feature importance and model coefficients from trained machine learning models.
 
+![Box plots for categorical / binary data](documentation/bot-plots-binary.png)
+![Violin plots for numerical data](documentation/violin-plots-continuous.png)
+
 ### Business Requirement Two
 
 To develop a predictive model that identifies patients with asthma within a highly imbalanced dataset. This is important, as the dataset reflects a real-world population of patients, with patients with asthma reflecting a small sample. Demonstrating the detection of asthma cases within an imbalanced dataset is critical for real-world screening and early identification.
@@ -167,7 +170,7 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+* None noted.
 
 ## Deployment
 
@@ -186,21 +189,51 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+### Data Handling
 
-## Credits
+* [Pandas](https://pandas.pydata.org/docs/index.html) – Data manipulation and analysis  
+* [NumPy](https://numpy.org/doc/stable/) – Multi-dimensional arrays and advanced mathematical functions
+* [SciPy](https://scipy.org/) – Scientific computing library with statistical tests  
+* [ppscore](https://pypi.org/project/ppscore/) – Detect linear or non-linear relationships between features 
 
-Guidance on best practices from:
+### Data Visualisation
 
-* [towardsdatascience](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/) - understanding hyperparameter optimisation
-* [geeksforgeeks](https://www.geeksforgeeks.org/machine-learning/random-forest-hyperparameter-tuning-in-python/) - understanding hyperparameter optimisation
+* [Matplotlib](https://matplotlib.org/) – Static, animated, and interactive visualizations
+* [Seaborn](https://seaborn.pydata.org/) – Statistical data visualization for attractive and informative graphics
+* [Plotly Express](https://plotly.com/python/plotly-express/) – Easy creation of interactive plots
 
-### Content
+### Machine Learning
 
-Example content from:
+* [scikit-learn](https://scikit-learn.org/stable/) – Machine learning library for classification, regression, and clustering
+* [XGBoost](https://xgboost.readthedocs.io/en/stable/) – Gradient boosting library for high-performance ML models
+* [Feature-engine](https://feature-engine.trainindata.com/en/latest/) – Transformers to engineer and select features for ML models
+* [Joblib](https://joblib.readthedocs.io/en/stable/) – Pipelining, caching, and saving/loading models
 
-* [Churnonmeter](https://github.com/CodingLL25/churnometer/tree/main) - The Code Institutes walkthrough project for portfolio five
-* [LoanGuard](https://github.com/kathrinmzl/LoanGuard/tree/main) - this was referenced throughout the development of AsthmaBurden as a great example of meeting project expectations, with clear overviews of the steps taken and insight into decision making behind predictive analytics.
+### Handling Imbalanced Data
+
+* [imbalanced-learn](https://imbalanced-learn.org/stable/) – Tools for handling imbalanced datasets in classification tasks (e.g., BorderlineSMOTE)
+
+### Pipelines & Preprocessing
+
+* [scikit-learn Pipeline](https://scikit-learn.org/stable/modules/compose.html#pipeline) – Build ML pipelines
+* [ColumnTransformer](https://scikit-learn.org/stable/modules/compose.html#columntransformer) – Apply transformations to subsets of features
+* [SklearnTransformerWrapper](https://feature-engine.trainindata.com/en/latest/wrappers.html) – Wrap custom transformers for pipelines
+
+### Interactive & Development Environment
+
+* [Jupyter Notebook](https://jupyter.org/) – Interactive computing environment for running and documenting code
+* [VSCode](https://code.visualstudio.com/) – Integrated development environment (IDE)
+* [Streamlit](https://docs.streamlit.io/) – Build interactive dashboards and web apps
+
+### Version Control & Deployment
+
+* [Git](https://git-scm.com/) – Version control system
+* [GitHub](https://github.com/) – Code hosting and collaboration platform
+* [Heroku](https://heroku.com/) – Cloud platform for deploying applications
+
+## Validation
+
+* [PEP8 validation](https://pep8ci.herokuapp.com/)
 
 ### Media
 
@@ -210,3 +243,12 @@ Example content from:
 ## Acknowledgements (optional)
 
 One final thank you to [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for her endless support and guidance.
+
+## Credits
+
+Based on the methodologies used in [Churnonmeter](https://github.com/CodingLL25/churnometer/tree/main), the Code Institutes walkthrough project. Some functions were either used directly from the walkthrough or customised. Additionally, the [LoanGuard](https://github.com/kathrinmzl/LoanGuard/tree/main) project was referenced throughout the development of AsthmaBurden as a great example of meeting project expectations, with clear overviews of the steps taken and insight into decision making behind predictive analytics.
+
+The following tools were referenced throughout as well for furthering knowledge and best practices:
+
+* [towardsdatascience](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/) - understanding hyperparameter optimisation
+* [geeksforgeeks](https://www.geeksforgeeks.org/machine-learning/random-forest-hyperparameter-tuning-in-python/) - understanding hyperparameter optimisation
