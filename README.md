@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The resulting analysis supports early identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
+This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The resulting analysis would be used to support identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
 
 ### Types of Asthma
 
@@ -100,7 +100,7 @@ The overall aim of this project to develop a supervised machine learning model t
 
 ### Business Requirement One (Conventional)
 
-As mentioned previously, exploratory data analyses was performed to visualse the distrubution and group differences between asthma and non-asthma patients. Contingecy tables were populated for each binary feature against asthma diagnoses. Additionally, chi-square/Fisher were performed to assess the associations between binary features and asthma_status. For continuous features, associations were tested using bivariate analyses, t-test or Mann-Whitney, based on normality. A p-value of <0.05 was deemed significant.
+As mentioned previously, exploratory data analyses was performed to visualse the distrubution and group differences between asthma and non-asthma patients. Contingency tables were populated for each binary feature against asthma diagnoses. Additionally, chi-square/Fisher were performed to assess the associations between binary features and asthma_status. For continuous features, associations were tested using bivariate analyses, t-test or Mann-Whitney, based on normality. A p-value of <0.05 was deemed significant.
 
 ### Buiness Requirement Two (Machine Learning)
 
