@@ -20,13 +20,10 @@ def page_summary_body():
         "* The dataset represents an anonymised **Asthma Disease Dataset** from [Kaggle](https://www.kaggle.com/datasets/rabieelkharoua/asthma-disease-dataset/data), containing individual-level patient data.\n"
         "* Each record includes demographic, lifestyle, environmental, allergy, medical history, clinical measurements, and symptom features, as well as a binary asthma diagnosis.\n"
         "* The dataset contains 2,392 patients, of which 124 have asthma, reflecting a highly imbalanced real-world population.\n\n"
-
         "Each row represents a patient record with demographic, lifestyle, environmental, allergy-related, "
         "symptom-based, and clinical attributes. The target variable, **`Diagnosis`**, "
         "indicates whether the patient has asthma (`0` = no asthma, `1` = asthma).\n\n"
-
         "The dataset variables can be grouped as **numeric** or **categorical**:\n\n"
-
         "- **Numeric Variables (10):**\n"
         "  - Age (5–80 years)\n"
         "  - BMI (15–40)\n"
@@ -38,7 +35,6 @@ def page_summary_body():
         "  - DustExposure (0–10)\n"
         "  - LungFunctionFEV1 (1.0–4.0 L)\n"
         "  - LungFunctionFVC (1.5–6.0 L)\n\n"
-
         "- **Categorical Variables (18):**\n"
         "  - PatientID (unique identifier)\n"
         "  - Gender (0 = Male, 1 = Female)\n"
@@ -59,10 +55,9 @@ def page_summary_body():
         "  - ExerciseInduced (0 = No, 1 = Yes)\n"
         "  - Diagnosis (target variable, 0 = No asthma, 1 = Yes)\n"
         "  - DoctorInCharge (all values 'Dr_Confid')\n\n"
-
         "DoctorInCharge and PatientID were not used for analyses.\n\n"
         "No **missing data** or **duplicate entries** was noted during data cleaning.\n"
-        )
+    )
 
     # Business Requirements
     st.success(
