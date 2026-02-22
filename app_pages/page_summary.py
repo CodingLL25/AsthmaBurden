@@ -2,4 +2,81 @@ import streamlit as st
 
 def page_summary_body():
     st.title("Project Summary")
-    st.write("Overview of asthma project...")
+    # Overview of key words
+    st.info(
+        "**Project Terms & Jargon**\n"
+        "* A **patient** is an individual whose health data is recorded in the dataset.\n"
+        "* An **asthma case** refers to a patient who has been diagnosed with asthma.\n"
+        "* A **non-asthma patient** is someone in the dataset without an asthma diagnosis.\n"
+        "* **Clinical measurements** are numerical indicators such as LungFunctionFEV1 and LungFunctionFVC that reflect lung capacity and function.\n"
+        "* **Lifestyle factors** include BMI, physical activity, diet quality, sleep quality, and smoking status.\n"
+        "* **Environmental and allergy factors** describe exposure to pollution, dust, pollen, or pet allergens.\n"
+        "* **Medical history** includes prior conditions like eczema, hay fever, gastroesophageal reflux, or family history of asthma.\n"
+        "* **Symptoms** are patient-reported indicators such as wheezing, chest tightness, coughing, or shortness of breath.\n\n"
+    )
+    # Dataset summary
+    st.info(
+        "**Project Dataset**\n"
+        "* The dataset represents an anonymised **Asthma Disease Dataset** from [Kaggle](https://www.kaggle.com/datasets/rabieelkharoua/asthma-disease-dataset/data), containing individual-level patient data.\n"
+        "* Each record includes demographic, lifestyle, environmental, allergy, medical history, clinical measurements, and symptom features, as well as a binary asthma diagnosis.\n"
+        "* The dataset contains 2,392 patients, of which 124 have asthma, reflecting a highly imbalanced real-world population.\n\n"
+
+        "Each row represents a patient record with demographic, lifestyle, environmental, allergy-related, "
+        "symptom-based, and clinical attributes. The target variable, **`Diagnosis`**, "
+        "indicates whether the patient has asthma (`0` = no asthma, `1` = asthma).\n\n"
+
+        "The dataset variables can be grouped as **numeric** or **categorical**:\n\n"
+
+        "- **Numeric Variables (10):**\n"
+        "  - Age (5–80 years)\n"
+        "  - BMI (15–40)\n"
+        "  - PhysicalActivity (hours/week, 0–10)\n"
+        "  - DietQuality (0–10)\n"
+        "  - SleepQuality (4–10)\n"
+        "  - PollutionExposure (0–10)\n"
+        "  - PollenExposure (0–10)\n"
+        "  - DustExposure (0–10)\n"
+        "  - LungFunctionFEV1 (1.0–4.0 L)\n"
+        "  - LungFunctionFVC (1.5–6.0 L)\n\n"
+
+        "- **Categorical Variables (18):**\n"
+        "  - PatientID (unique identifier)\n"
+        "  - Gender (0 = Male, 1 = Female)\n"
+        "  - Ethnicity (0 = Caucasian, 1 = African American, 2 = Asian, 3 = Other)\n"
+        "  - EducationLevel (0 = None, 1 = High School, 2 = Bachelor's, 3 = Higher)\n"
+        "  - Smoking (0 = No, 1 = Yes)\n"
+        "  - PetAllergy (0 = No, 1 = Yes)\n"
+        "  - FamilyHistoryAsthma (0 = No, 1 = Yes)\n"
+        "  - HistoryOfAllergies (0 = No, 1 = Yes)\n"
+        "  - Eczema (0 = No, 1 = Yes)\n"
+        "  - HayFever (0 = No, 1 = Yes)\n"
+        "  - GastroesophagealReflux (0 = No, 1 = Yes)\n"
+        "  - Wheezing (0 = No, 1 = Yes)\n"
+        "  - ShortnessOfBreath (0 = No, 1 = Yes)\n"
+        "  - ChestTightness (0 = No, 1 = Yes)\n"
+        "  - Coughing (0 = No, 1 = Yes)\n"
+        "  - NighttimeSymptoms (0 = No, 1 = Yes)\n"
+        "  - ExerciseInduced (0 = No, 1 = Yes)\n"
+        "  - Diagnosis (target variable, 0 = No asthma, 1 = Yes)\n"
+        "  - DoctorInCharge (all values 'Dr_Confid')\n\n"
+
+        "DoctorInCharge and PatientID were not used for analyses.\n\n"
+        "No **missing data** or **duplicate entries** was noted during data cleaning.\n"
+        )
+
+    # Business Requirements
+    st.success(
+        "The project has 3 business requirements:\n"
+        "1. **Data Insights (Conventional Analysis)**: Identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based, and clinical factors associated with asthma status. "
+        "Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients. "
+        "Use interpretable visualizations such as boxplots for categorical/binary data, violin plots for numerical data, and predictive power score (PPS) heatmaps to highlight important relationships.\n"
+        "2. **Classification Model (Machine Learning)**: Develop a predictive model to identify patients with asthma, accounting for the highly imbalanced nature of the dataset. "
+        "Apply techniques like class weighting, oversampling, SMOTE, or anomaly detection to improve sensitivity to asthma cases. "
+        "Evaluate model performance using recall and precision to ensure effective early identification."
+    )
+
+    # Link to README file, so the users can have access to full project documentation
+    st.write(
+        "* For additional information, please visit and **read** the "
+        "[Project README file](https://github.com/CodingLL25/AsthmaBurden)."
+    )
