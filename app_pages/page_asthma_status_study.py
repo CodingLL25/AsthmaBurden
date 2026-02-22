@@ -77,6 +77,35 @@ def page_asthma_status_study_body():
         "No continuous variables were significantly correlated."
     )
 
+    # Updated data frame
+    df_updated = process_categorical(df)
+
+    # Correlation data - continuous variables
+    continuous_results_df = continuous_significance(df_updated)
+
+    if st.checkbox("Continuous data significance:"):
+        st.dataframe(
+            continuous_results_df.style.format(
+                {"statistic": "{:.3f}", "p-value": "{:.4f}"}
+            )
+        )
+
+    st.write(
+        "One categorical variables was significantly correlated with asthma "
+        "status. This could relate to the specific type of asthma the patient "
+        "has been diagnosed with."
+    )
+
+    # Correlation data - binary variables
+    binary_results_df = binary_significance(df_updated)
+
+    if st.checkbox("Binary data significance:"):
+        st.dataframe(
+            binary_results_df.style.format(
+                {"statistic": "{:.3f}", "p-value": "{:.4f}"}
+            )
+        )
+
 
 # Functions for the charts
 def violin_plots(df):
@@ -155,3 +184,116 @@ def bar_plots(df):
 
     plt.tight_layout(rect=[0, 0.05, 1, 1])
     st.pyplot(fig)
+
+
+def process_categorical(df):
+    """
+    Consolidate Ethnicity and EducationLevel into simplified binary categories.
+    """
+    df_updated = df.copy()
+
+    # Simplify Ethnicity
+    df_updated["Ethnicity"] = df_updated["Ethnicity"].replace(
+        {
+            0: 0,  # White
+            1: 1,  # African American → 1
+            2: 1,  # Asian → 1
+            3: 1,  # Other → 1
+        }
+    )
+
+    # Simplify EducationLevel
+    df_updated["EducationLevel"] = df_updated["EducationLevel"].replace(
+        {
+            1: 1,  # Bachelor/Higher
+            2: 1,  # Bachelor/Higher
+            3: 0,  # None/High school
+        }
+    )
+
+    return df_updated
+
+
+def continuous_significance(df_updated):
+    continuous_features = df_updated.select_dtypes(
+        include="float"
+    ).columns.tolist()
+
+    continuous_results = {}
+
+    for feature in continuous_features:
+        group0 = df_updated[df_updated["Diagnosis"] == 0][feature].dropna()
+        group1 = df_updated[df_updated["Diagnosis"] == 1][feature].dropna()
+
+        # Check normality
+        _, p0 = shapiro(group0) if len(group0) >= 3 else (None, 0)
+        _, p1 = shapiro(group1) if len(group1) >= 3 else (None, 0)
+
+        # Choose t-test if normal distribution, else Mann-Whitney
+        if p0 > 0.05 and p1 > 0.05:
+            stat, p = ttest_ind(group0, group1, equal_var=False)
+            test_name = "t-test"
+        else:
+            stat, p = mannwhitneyu(group0, group1, alternative="two-sided")
+            test_name = "Mann-Whitney U"
+
+        significance = "Significant" if p < 0.05 else "Not significant"
+
+        continuous_results[feature] = {
+            "test": test_name,
+            "statistic": stat,
+            "p-value": p,
+            "significance": significance,
+        }
+
+    # Create a dataframe and return it
+    continuous_results_df = pd.DataFrame(continuous_results).T
+    continuous_results_df.index.name = "Feature"
+    return continuous_results_df
+
+
+def binary_significance(df_updated):
+    # Remove diagnosis for analysis
+    binary_features = [
+        col
+        for col in df_updated.select_dtypes("int").columns
+        if col != "Diagnosis"
+    ]
+
+    # Create an empty dictionary for the results
+    binary_results = {}
+
+    # Loop through features, recreate contigency tables, and significance
+    for feature in binary_features:
+        table = pd.crosstab(df_updated[feature], df_updated["Diagnosis"])
+
+        # Run chi-square test
+        chi2, p_chi, dof, expected = chi2_contingency(table)
+
+        # Decide whether to use Fisher (if any expected count < 5)
+        if (expected < 5).any():
+            oddsratio, p_value = fisher_exact(table)
+            test_used = "Fisher's exact"
+        else:
+            p_value = p_chi
+            oddsratio = (table.iloc[1, 1] / table.iloc[1, 0]) / (
+                table.iloc[0, 1] / table.iloc[0, 0]
+            )
+            test_used = "Chi-square"
+
+        # Significance
+        significance = (
+            "Significant" if p_value < 0.05 else "Not significant"
+        )
+
+        # Overview of the output
+        binary_results[feature] = {
+            "test": test_used,
+            "p-value": p_value,
+            "odds_ratio": oddsratio,
+            "significance": significance,
+        }
+
+    binary_results_df = pd.DataFrame(binary_results).T
+    binary_results_df.index.name = "Feature"
+    return binary_results_df
