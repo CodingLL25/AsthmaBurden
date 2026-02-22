@@ -50,7 +50,7 @@ def page_asthma_status_study_body():
     st.write(
         "The dataset contains a multitude of variables for analysis. "
         "This included 10 numeric and 16 binary variables (PatientID and ) "
-        "DoctorInCharge removed)."
+        "DoctorInCharge removed). "
         "Distributions were analysed to identify outliers. "
     )
 
@@ -70,10 +70,10 @@ def page_asthma_status_study_body():
 
     # Correlation study
     st.write(
-        "* A correlation study was conducted to better understand the"
+        "* A correlation study was conducted to better understand the "
         "relationship between the variables and asthma diagnosis. \n"
-        "However, due to the small pool of asthma patients the analyses "
-        "was limited.\n\n"
+        "However, due to the small pool of asthma patients the findings "
+        "were limited (imbalanced sample).\n\n"
         "No continuous variables were significantly correlated."
     )
 
