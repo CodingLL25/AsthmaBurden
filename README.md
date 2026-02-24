@@ -233,16 +233,13 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 ## Validation
 
-* [PEP8 validation](https://pep8ci.herokuapp.com/)
+* [PEP8 validation](https://pep8ci.herokuapp.com/) - to validate the code
+* [Python Formatter](https://formatter.org/python-formatter) - to ensure alignment with PEP8 validation
 
 ### Media
 
 * [Unsplash](https://unsplash.com/) for free images to use
 * [Europeana](https://www.europeana.eu/item/744/item_3461740) for the lungs image used in the README file
-
-## Acknowledgements (optional)
-
-One final thank you to [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for her endless support and guidance.
 
 ## Credits
 
@@ -252,3 +249,7 @@ The following tools were referenced throughout as well for furthering knowledge 
 
 * [towardsdatascience](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/) - understanding hyperparameter optimisation
 * [geeksforgeeks](https://www.geeksforgeeks.org/machine-learning/random-forest-hyperparameter-tuning-in-python/) - understanding hyperparameter optimisation
+
+## Acknowledgements
+
+One final thank you to [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for her endless support and guidance.
