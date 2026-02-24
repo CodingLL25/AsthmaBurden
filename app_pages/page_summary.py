@@ -21,7 +21,7 @@ def page_summary_body():
         "* Each record includes demographic, lifestyle, environmental, allergy, medical history, clinical measurements, and symptom features, as well as a binary asthma diagnosis.\n"
         "* The dataset contains 2,392 patients, of which 124 have asthma, reflecting a highly imbalanced real-world population.\n\n"
         "Each row represents a patient record with demographic, lifestyle, environmental, allergy-related, "
-        "symptom-based, and clinical attributes. The target variable, **`Diagnosis`**, "
+        "symptom-based, and clinical attributes. The target variable, **Diagnosis**, "
         "indicates whether the patient has asthma (`0` = no asthma, `1` = asthma).\n\n"
         "The dataset variables can be grouped as **numeric** or **categorical**:\n\n"
         "- **Numeric Variables (10):**\n"
