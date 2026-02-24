@@ -105,6 +105,23 @@ def page_asthma_status_study_body():
                 {"statistic": "{:.3f}", "p-value": "{:.4f}"}
             )
         )
+    
+    # Feature-Target correlation
+
+    st.write(
+        "Additional analyses were performed to assess the linear relationships"
+        " between features and the target variable using correlation analysis. "
+        "A feature–target correlation plot was generated to evaluate the "
+        "strength and direction of associations, as well as to explore "
+        "potential multicollinearity among predictors. This provided an "
+        "alternative route for assessing meaninful relationships with the "
+        "target feature."
+    )
+
+    if st.checkbox("Feature-Target Correlation:"):
+        st.dataframe(
+            pps_plot(df_updated)
+        )
 
 
 # Functions for the charts
@@ -297,3 +314,18 @@ def binary_significance(df_updated):
     binary_results_df = pd.DataFrame(binary_results).T
     binary_results_df.index.name = "Feature"
     return binary_results_df
+
+def pps_plot(df_updated):
+    features = df_updated.drop(["Diagnosis"], axis=1)
+    target = df_updated["Diagnosis"]
+
+    correlation_matrix = features.corrwith(target)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(
+        pd.DataFrame(correlation_matrix, columns=["Correlation"]),
+        annot=True,
+        cmap="coolwarm",
+        cbar=True,
+    )
+    plt.title("Feature-Target Correlation Matrix")
+    plt.show()
