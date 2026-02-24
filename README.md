@@ -83,7 +83,7 @@ To better understand the factors influencing asthma risk, four key hypotheses we
 To identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based and clinical factors associated with asthma status. Asthma is characterised by airflow obstruction, reduced lung capacity, demographic and lifestyle factors and symptoms such as wheezing.
 
 * Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients.
-* Visualise key relationships using interpretable plots such as boxplots, bar charts, and predictive power predictive score (PPS) heatmaps.
+* Visualise key relationships using interpretable plots such as boxplots, bar charts, and feature-target correlation plots.
 * Confirm findings by reviewing feature importance and model coefficients from trained machine learning models.
 
 ![Box plots for categorical / binary data](documentation/bot-plots-binary.png)
@@ -195,7 +195,6 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 * [Pandas](https://pandas.pydata.org/docs/index.html) – Data manipulation and analysis  
 * [NumPy](https://numpy.org/doc/stable/) – Multi-dimensional arrays and advanced mathematical functions
 * [SciPy](https://scipy.org/) – Scientific computing library with statistical tests  
-* [ppscore](https://pypi.org/project/ppscore/) – Detect linear or non-linear relationships between features
 
 ### Data Visualisation
 

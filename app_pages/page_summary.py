@@ -66,9 +66,9 @@ def page_summary_body():
         "The project has 3 business requirements:\n"
         "1. **Data Insights (Conventional Analysis)**: Identify and visualize the key demographic, lifestyle, environmental, allergy-related, medical history, symptom-based, and clinical factors associated with asthma status. "
         "Perform exploratory data analysis to examine distributions and group differences between asthma and non-asthma patients. "
-        "Use interpretable visualizations such as boxplots for categorical/binary data, violin plots for numerical data, and predictive power score (PPS) heatmaps to highlight important relationships.\n"
+        "Use interpretable visualizations such as boxplots for categorical/binary data, violin plots for numerical data, and correlation figures to highlight important relationships.\n"
         "2. **Classification Model (Machine Learning)**: Develop a predictive model to identify patients with asthma, accounting for the highly imbalanced nature of the dataset. "
-        "Apply techniques like class weighting, oversampling, SMOTE, or anomaly detection to improve sensitivity to asthma cases. "
+        "Apply techniques like class weighting,, SMOTE, or anomaly detection to improve sensitivity to asthma cases. "
         "Evaluate model performance using recall and precision to ensure effective early identification."
     )
 
