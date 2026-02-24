@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The resulting analysis would be used to support identification of asthma risk and contributes to preventative, evidence-based clinical decision-making.
+This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The aim of the resulting analysis was to support identification of asthma risk and contributes to preventative, evidence-based clinical decision-making. Success metrics were defined in the business care, and were not met meaning recall and precision of asthma classification was poor.
 
 ### Types of Asthma
 
@@ -95,7 +95,7 @@ To develop a predictive model that identifies patients with asthma within a high
 
 * Build and evaluate classification models to predict asthma status using all features in the dataset.
 * Apply imbalance‑handling techniques (e.g., class weighting, oversampling, SMOTE, anomaly‑style detection) to improve sensitivity to asthma cases.
-* Assess model performance using recall, precision, F1‑score, ROC‑AUC, or PR‑AUC.
+* Assess model performance using recall and precision.
 
 ## Business Case
 
@@ -110,7 +110,7 @@ As mentioned previously, exploratory data analyses was performed to visualse the
 * Goal: To predict if a patient will have asthma (asthma_status). Probability of asthma diagnoses to be reported.
 * Model Type: Supervised - Binary Classification
 * Inputs: Demographic, Lifestyle, Environmental and Allergy, Medical History, Clinical measurements, and Symptom features
-* Model Choice: XXX
+* Model Choice: Logistic Regression
 * Success Metrics (Training and Test):
   * Recall for asthma ≥ 0.80 – to minimize false negatives (undiagnosed asthma cases predicted as non-asthma), ensuring sensitive detection of patients who actually have asthma.
   * Precision for asthma ≥ 0.60 – to reduce false positives, avoiding over-identifying healthy patients as asthmatic.
@@ -170,7 +170,8 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 ## Unfixed Bugs
 
-* None noted.
+* Asthma Status Study: legend for the categorical box plots does not align with the figure.
+* Asthma Status Study: empty table showing at when "Feature-Target Correlation" selected.
 
 ## Deployment
 
@@ -194,7 +195,7 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 * [Pandas](https://pandas.pydata.org/docs/index.html) – Data manipulation and analysis  
 * [NumPy](https://numpy.org/doc/stable/) – Multi-dimensional arrays and advanced mathematical functions
 * [SciPy](https://scipy.org/) – Scientific computing library with statistical tests  
-* [ppscore](https://pypi.org/project/ppscore/) – Detect linear or non-linear relationships between features 
+* [ppscore](https://pypi.org/project/ppscore/) – Detect linear or non-linear relationships between features
 
 ### Data Visualisation
 
