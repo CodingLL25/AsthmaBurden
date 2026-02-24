@@ -23,4 +23,3 @@ def page_project_hypothesis_body():
         "data analysis. None of the initial hypotheses were strongly supported "
         "by the data, indicating the need for further investigation."
     )
-
