@@ -90,7 +90,7 @@ def page_asthma_status_study_body():
             )
         )
 
-    st.write(
+    st.success(
         "One categorical variables was significantly correlated with asthma "
         "status. This could relate to the specific type of asthma the patient "
         "has been diagnosed with."
@@ -107,7 +107,6 @@ def page_asthma_status_study_body():
         )
     
     # Feature-Target correlation
-
     st.write(
         "Additional analyses were performed to assess the linear relationships"
         " between features and the target variable using correlation analysis. "
@@ -120,9 +119,16 @@ def page_asthma_status_study_body():
 
     if st.checkbox("Feature-Target Correlation:"):
         st.dataframe(
-            pps_plot(df_updated)
+            feature_target_correlation_plot(df_updated)
         )
 
+    st.success(
+        "Most features show very weak correlations with asthma status, "
+        "indicating limited linear relationships.\n\n "
+        "Exercise-induced symptoms has the strongest positive correlation, "
+        " possibly reflecting the specific asthma subtype diagnosed."
+        "While chest tightness shows the strongest negative correlation. "
+    )
 
 # Functions for the charts
 def violin_plots(df):
@@ -232,6 +238,9 @@ def process_categorical(df):
 
 
 def continuous_significance(df_updated):
+    """
+    Create a dataframe for continuous results
+    """
     continuous_features = df_updated.select_dtypes(
         include="float"
     ).columns.tolist()
@@ -270,6 +279,9 @@ def continuous_significance(df_updated):
 
 
 def binary_significance(df_updated):
+    """
+    Create a dataframe for binary results
+    """
     # Remove diagnosis for analysis
     binary_features = [
         col
@@ -315,17 +327,25 @@ def binary_significance(df_updated):
     binary_results_df.index.name = "Feature"
     return binary_results_df
 
-def pps_plot(df_updated):
+
+def feature_target_correlation_plot(df_updated):
+    """
+    Generates a heatmap of feature-target correlations for a Streamlit app.
+    """
     features = df_updated.drop(["Diagnosis"], axis=1)
     target = df_updated["Diagnosis"]
-
+    
     correlation_matrix = features.corrwith(target)
-    plt.figure(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(8, 6))
+    corr_df = pd.DataFrame(correlation_matrix, columns=["Correlation"])
+    
     sns.heatmap(
-        pd.DataFrame(correlation_matrix, columns=["Correlation"]),
+        corr_df,
         annot=True,
         cmap="coolwarm",
         cbar=True,
+        ax=ax
     )
-    plt.title("Feature-Target Correlation Matrix")
-    plt.show()
+    
+    ax.set_title("Feature-Target Correlation Matrix", fontsize=14)
+    st.pyplot(fig)
