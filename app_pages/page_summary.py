@@ -6,7 +6,9 @@ def page_summary_body():
     st.info(
         "**Project Terms & Jargon**\n"
         "* A **patient** is an individual whose health data is recorded in the dataset.\n"
-        "* An **asthma case** refers to a patient who has been diagnosed with asthma.\n"
+        "* An **asthma** oatient refers to a patient who has been diagnosed with asthma.\n"
+        "* A **feature** refers to a variable in the dataset.\n"
+        "* **Target Feature** refers to the variable of interest, i.e. asthma diagnosis"
         "* A **non-asthma patient** is someone in the dataset without an asthma diagnosis.\n"
         "* **Clinical measurements** are numerical indicators such as LungFunctionFEV1 and LungFunctionFVC that reflect lung capacity and function.\n"
         "* **Lifestyle factors** include BMI, physical activity, diet quality, sleep quality, and smoking status.\n"
