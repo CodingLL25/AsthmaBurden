@@ -142,7 +142,7 @@ def violin_plots(df):
         include="float"
     ).columns.tolist()
 
-    fig, axes = plt.subplots(3, 4, figsize=(10, 8))
+    fig, axes = plt.subplots(3, 4, figsize=(10, 8), dpi=40)
     axes = axes.flatten()
 
     for ax, feature in zip(axes, continuous_features):
@@ -176,7 +176,7 @@ def bar_plots(df):
     for feature in binary_features:
         contingency_tables[feature] = pd.crosstab(df[target], df[feature])
 
-    fig, axes = plt.subplots(4, 4, figsize=(12, 9), dpi=80)
+    fig, axes = plt.subplots(4, 4, figsize=(12, 9), dpi=40)
     axes = axes.flatten()
 
     for ax, (feature, table) in zip(axes, contingency_tables.items()):
