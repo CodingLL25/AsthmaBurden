@@ -1,7 +1,8 @@
 import streamlit as st
 
+
 def page_summary_body():
-    """ 
+    """
     Streamlit page summarising the project jargon, information and business
     requirements.
     """
@@ -25,7 +26,7 @@ def page_summary_body():
         "activity, diet quality, sleep quality, and smoking status.\n"
         "* **Environmental and allergy factors** describe exposure to "
         "pollution, dust, pollen, or pet allergens.\n"
-        "* **Medical history** includes prior conditions like eczema, hayfever "
+        "* **Medical history** includes prior conditions like eczema, hayfever"
         ", gastroesophageal reflux, or family history of asthma.\n"
         "* **Symptoms** are patient-reported indicators such as wheezing, "
         "chest tightness, coughing, or shortness of breath.\n\n"
