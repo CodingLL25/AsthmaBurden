@@ -25,6 +25,13 @@ def page_asthma_status_study_body():
     """
     Streamlit page for the exploratory data analysis.
     """
+    eda_violin_plots = plt.imread(
+        f"outputs/eda_images/violin_plots.png"
+    )
+    eda_boxplots = plt.imread(
+        f"outputs/eda_images/boxplots.png"
+    )
+
     st.title("Asthma Status Study")
 
     # Overview of page
@@ -57,10 +64,10 @@ def page_asthma_status_study_body():
     )
 
     if st.checkbox("Distribution of continuous data"):
-        violin_plots(df)
+        st.image(eda_violin_plots)
 
     if st.checkbox("Distribution of categorical data"):
-        bar_plots(df)
+        st.image(eda_boxplots)
 
     st.success("""
         No outliers were noted for numeric features. Additionally,
@@ -136,85 +143,7 @@ def page_asthma_status_study_body():
     """)
 
 
-# Functions for the charts
-def violin_plots(df):
-    continuous_features = df.select_dtypes(
-        include="float"
-    ).columns.tolist()
-
-    fig, axes = plt.subplots(3, 4, figsize=(10, 8), dpi=40)
-    axes = axes.flatten()
-
-    for ax, feature in zip(axes, continuous_features):
-        sns.violinplot(
-            x="Diagnosis",
-            y=feature,
-            data=df,
-            hue="Diagnosis",
-            ax=ax,
-            inner="box",
-            palette="Set2",
-            legend=False,
-        )
-        ax.set_title(feature, fontsize=10)
-        ax.set_xlabel(ax.get_xlabel(), fontsize=8)
-        ax.set_ylabel(ax.get_ylabel(), fontsize=8)
-        ax.tick_params(axis="both", which="major", labelsize=7)  #
-
-    plt.tight_layout()
-    st.pyplot(fig)
-
-
-def bar_plots(df):
-    """
-    Function to create the bar plots based on contigency tables.
-    Amends were made to the code from 03_DataExploration re: too big"""
-    target = "Diagnosis"
-    binary_features = df.select_dtypes(include="int").columns.drop(target)
-    contingency_tables = {}
-
-    for feature in binary_features:
-        contingency_tables[feature] = pd.crosstab(df[target], df[feature])
-
-    fig, axes = plt.subplots(4, 4, figsize=(12, 9), dpi=40)
-    axes = axes.flatten()
-
-    for ax, (feature, table) in zip(axes, contingency_tables.items()):
-        proportion_table = table.div(table.sum(axis=1), axis=0) * 100
-        # Reindex columns to ensure consistent order of categories
-        proportion_table = proportion_table.reindex(
-            columns=[0, 1, 2, 3], fill_value=0
-        )
-        # Plot without legend
-        proportion_table.plot(
-            kind="bar",
-            stacked=False,
-            ax=ax,
-            colormap="tab10",
-            legend=False,
-        )
-        ax.set_title(feature, fontsize=10)
-        ax.set_ylabel("Proportion (%)", fontsize=9)
-        ax.set_ylim(0, 100)
-
-    # Make a shared legend for 0, 1, 2, 3
-    unique_values = ["0", "1", "2", "3"]
-    colors = plt.get_cmap("tab10").colors[: len(unique_values)]
-    handles = [plt.Line2D([0], [0], color=c, lw=4) for c in colors]
-
-    fig.legend(
-        handles,
-        unique_values,
-        title="Value",
-        loc="lower center",
-        ncol=4,
-        fontsize=9,
-    )
-
-    plt.tight_layout(rect=[0, 0.05, 1, 1])
-    st.pyplot(fig)
-
-
+# Functions for the tables and charts
 def process_categorical(df):
     """
     Consolidate Ethnicity and EducationLevel into simplified binary categories.
