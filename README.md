@@ -198,8 +198,6 @@ Code was passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with n
 
 ## Unfixed Bugs
 
-### App pages
-
 * Asthma Status Study: empty table showing at when "Feature-Target Correlation" selected.
 * Project Hypotheses: markdown for hypotheses table exceeds 79 characters. Not a bug but a formatting issue.
 
@@ -275,7 +273,7 @@ Code was passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with n
 * [GitHub](https://github.com/) – Code hosting and collaboration platform
 * [Heroku](https://heroku.com/) – Cloud platform for deploying applications
 
-## Validation
+### Validation
 
 * [PEP8 validation](https://pep8ci.herokuapp.com/) - to validate the code
 * [Python Formatter](https://formatter.org/python-formatter) - to ensure alignment with PEP8 validation
@@ -297,3 +295,4 @@ The following tools were referenced throughout as well for furthering knowledge 
 ## Acknowledgements
 
 One final thank you to [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for her endless support and guidance.
+git. Note, git control was not as frequent as needed. Often comitted large changes at once (improvement for the future).
