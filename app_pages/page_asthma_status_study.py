@@ -77,14 +77,14 @@ def page_asthma_status_study_body():
         needed to be combined.
     """)
 
-    # Correlation study
+    st.write("## Correlation Study")
+    st.write("---")
     st.write("""
         * A correlation study was conducted to better understand the
         relationship between the variables and asthma diagnosis.
         However, due to the small pool of asthma patients the findings
-        were limited (imbalanced sample).
-
-        No continuous variables were significantly correlated.
+        were limited (imbalanced sample). These findings were used to validate
+        the set hypotheses.
     """)
 
     # Updated data frame
@@ -92,6 +92,10 @@ def page_asthma_status_study_body():
 
     # Correlation data - continuous variables
     continuous_results_df = continuous_significance(df_updated)
+
+    st.write(
+        "No continuous variables were significantly correlated."
+    )
 
     if st.checkbox("Continuous data significance:"):
         st.dataframe(
@@ -117,6 +121,8 @@ def page_asthma_status_study_body():
         )
 
     # Feature-Target correlation
+    st.write("## Feature-Target Correlation")
+    st.write("---")
     st.write("""
         Additional analyses were performed to assess the linear relationships
         between features and the target variable using correlation analysis.
@@ -141,6 +147,28 @@ def page_asthma_status_study_body():
         While chest tightness shows the strongest negative correlation.
     """)
 
+    st.write("## Summary of findings")
+    st.write("---")
+    st.info("""
+        Initial bivariate analysis revealed only statistically significant 
+        relationships between individual features and asthma status, 
+        suggesting that simple pairwise comparisons may not capture the 
+        complexity of the data.
+        
+        However, when examining feature correlations, some patterns emerged. 
+        Most features still show very weak correlations with asthma status, 
+        indicating limited linear relationships overall. Among them, 
+        exercise-induced symptoms stand out with the strongest positive 
+        correlation (significant feature identified with bivariate analysis), 
+        which may reflect a tendency for this symptom to be more 
+        pronounced in certain asthma subtypes. Conversely, chest tightness 
+        exhibits the strongest negative correlation, hinting at an inverse 
+        association in the dataset.
+        
+        These observations suggest that while individual features may not be 
+        strong predictors on their own, combinations of symptoms or nonlinear 
+        interactions could hold more predictive value for asthma status.
+    """)
 
 # Functions for the tables and charts
 def process_categorical(df):
