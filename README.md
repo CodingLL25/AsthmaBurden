@@ -6,6 +6,8 @@
 
 This project analyses the Asthma Disease Dataset from Kaggle to explore patterns in patient health data and develop machine learning models for asthma classification. Using data analytics and predictive modelling techniques, the project aims to identify key risk factors associated with asthma diagnoses and present insights through reproducible analysis and visualisations. The project was originally intended to investigate factors associated with clinical measures of disease severity and prognosis, particularly lung function. However, due to the dataset containing 2,392 individuals, of which only 124 are diagnosed with asthma (small pool for analyses), the scope was revised to focus on binary asthma prediction. The aim of the resulting analysis was to support identification of asthma risk and contributes to preventative, evidence-based clinical decision-making. Success metrics were defined in the business care, and were not met meaning recall and precision of asthma classification was poor.
 
+Live page on [Heroku](https://asthmaburden-8ddd98655007.herokuapp.com/).
+
 ### Types of Asthma
 
 * Allergic Asthma: Triggered by allergens such as pollen, dust mites, mold, or pet dander. Often begins in childhood and is associated with other allergic conditions.
@@ -168,25 +170,71 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 | Healthcare provider | I want to input a patient’s information and receive a predicted probability of asthma along with risk indicators | So that I can prioritize patients for follow-up, screening, or preventative interventions. |
 | Technical reviewer / data scientist | I want to inspect the machine learning model, including key features, structure, and performance metrics | So that I can evaluate the model’s reliability, interpretability, and suitability for clinical decision support. |
 
+## Testing
+
+### Manual testing
+
+#### Navigation
+
+| Feature | Action | Expected Result | Test Result |
+| --- | --- | --- | --- |
+| Project Summary Page | Landing page | Dashboard menu shows four pages | Pass |
+| Project Summary Page | Click on Asthma Status Study | Navigate to asthma study page | Pass |
+| Project Summary Page | Click on Project hypothesis and validation | Navigate to project hypothesis and validation page | Pass |
+| Project Summary Page | Click on Machine learning: predict asthma status | Navigate to predict asthma statuspage | Pass |
+
+#### Asthma Status Study
+
+| Feature | Action | Expected Result | Test Result |
+| --- | --- | --- | --- |
+| Inspect patient data | Click on inspect patient data | Shows patient data | Pass |
+| Distribution of continuous data | Click on "distribution of continuous data" | Show violin plots | Pass - slow to load |
+| Distribution of categorical data | Click on "distribution of categorical data" | Show box plots plots | Pass - slow to load |
+| Continuous data significance | Click on "Continuous data significance" | Show table | Pass |
+| Binary data significance | Click on "Binary data significance" | Show table | Pass |
+| Feature-Target correlation | Click on "Feature-target correlation" | Show figure | Pass |
+
+### Validator testing
+
+Code was passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with no issues noted (excluding the one noted below).
+
 ## Unfixed Bugs
+
+### App pages
 
 * Asthma Status Study: legend for the categorical box plots does not align with the figure.
 * Asthma Status Study: empty table showing at when "Feature-Target Correlation" selected.
+* Project Hypotheses: markdown for hypotheses table exceeds 79 characters. Not a bug but a formatting issue.
 
-## Deployment
+### Deployment
 
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/
-* Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+* The App live link is: [https://asthmaburden-8ddd98655007.herokuapp.com/](https://asthmaburden-8ddd98655007.herokuapp.com/)
+
+### Files within the working directory required for deployment
+
+1. Include a "setup.sh" file with the following information:
+      mkdir -p ~/.streamlit/
+      echo "\
+      [server]\n\
+      headless = true\n\
+      port = $PORT\n\
+      enableCORS = false\n\
+      \n\
+      " > ~/.streamlit/config.toml
+2. Include a ".python-version" file containing the supported version of python (v3.12)
+3. Include a proc.file with: web: sh setup.sh && streamlit run app.py
+
+### Going live with Heroku
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+5. The deployment process should happen smoothly if all deployment files are fully functional.
+6. Click now the button Open App on the top of the page to access your App.
+7. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -200,7 +248,6 @@ These user stories outline the needs of various stakeholders, ensuring that the 
 
 * [Matplotlib](https://matplotlib.org/) – Static, animated, and interactive visualizations
 * [Seaborn](https://seaborn.pydata.org/) – Statistical data visualization for attractive and informative graphics
-* [Plotly Express](https://plotly.com/python/plotly-express/) – Easy creation of interactive plots
 
 ### Machine Learning
 

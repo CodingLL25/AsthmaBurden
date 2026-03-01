@@ -14,6 +14,6 @@ app = MultiPage(app_name= "AsthmaBurden") # Create an instance of the app
 app.add_page("Quick Project Summary", page_summary_body)
 app.add_page("Asthma Status Study", page_asthma_status_study_body)
 app.add_page("Project Hypothesis and Validation", page_project_hypothesis_body)
-app.add_page("Machine Learning: Prospect Asthma Patient", page_predict_asthma_model_body)
+app.add_page("Machine Learning: Predict Asthma Status", page_predict_asthma_model_body)
 
 app.run() # Run the  app
