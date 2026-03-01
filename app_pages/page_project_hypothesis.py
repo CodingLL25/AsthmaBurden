@@ -21,15 +21,23 @@ def page_project_hypothesis_body():
         """
     )
 
-    st.error(
-        "Only two features, **ExerciseInduced** and **ChestTightness**, showed "
-        "meaningful correlation with asthma diagnosis during exploratory "
-        "data analysis. None of the initial hypotheses were strongly supported "
-        "by the data, indicating the need for further investigation."
-    )
+    st.write("""
+        The feature-target correlation matrix shows generally weak linear 
+        relationships between individual features and asthma risk, with 
+        correlation values close to zero. However, some patterns align with 
+        our four key hypotheses, providing initial quantitative support for 
+        clinical and environmental factors related to asthma.\n
+        - **Hypothesis 1 (H1):** Lung function metrics (LungFunctionFEV1 and 
+        LungFunctionFVC) show a slight positive correlation  with the target, 
+        suggesting poorer lung function relates to asthma status.\n
+        - **Hypothesis 2 (H2):** Symptoms like Wheezing show weak positive 
+        correlation (0.027), while others have minimal correlations.\n
+        - **Hypothesis 3 (H3):** Smoking has a small negative correlation, 
+        suggesting a subtle relationship with asthma.
+        - **Hypothesis 4 (H4):** Environmental exposures such as DustExposure 
+        show mild negative correlation.
 
-    st.success(
-        "However, the feature-correlaton plot showed more meaninful "
-        "correlations between asthma and the features. This included clinical "
-        "factors such as FEV1 and FVC. "
-    )
+        Overall, these correlation results aligned with our hypotheses. However, 
+        upon statistical testing, only excerise induced was signifcantly 
+        associated with asthma.
+    """)
