@@ -132,16 +132,18 @@ The goal of the dashboard is to provide comprehensive insights and intelligency 
 
 * Purpose: To provide a clear overview of the project in terms of:
   * Project Introduction
-  * Project Terms
-  * Dataset Overview and checkbox to see first 10 rows (rows representing a unique patient)
+  * Project Terms and Jargon
+  * Dataset Overview
   * Business Requirements
 
 ### Page Two: Asthma Status Study
 
 * Purpose: To provide an overview of key features associated with asthma status (Business Requirement One). The aim of this page is to help stakeholders understand associations with asthma status with clear visual insights. Page to be broken down by:
-  * Table of results for continuous features
-  * Table of results for binary features
-  * Checkbox to see PPS score heatmap
+  * Inspect patient data
+  * Distribution of data (violin plots and boxplots)
+  * Statistical analysis: Table of results for continuous features
+  * Statistical analysis: Table of results for binary features
+  * Feature-target correlation figure
 
 ### Page Three: Project Hypotheses and Validation
 
@@ -149,14 +151,10 @@ The goal of the dashboard is to provide comprehensive insights and intelligency 
 
 ### Page Four: Asthma Status Prediction Tool
 
-* Purpose: To show the classification output for deriving asthma status (Business Requirement Two):
-  * Widget input fields for relevant features for deriving asthma status; allow stakeholder to input data and present likely asthma status.
-
-### Page Five: Asthma Status Prediction - Model Insights
-
-* Purpose: To show predictive model performance and interpretation:
+* Purpose: To show the classification output for deriving asthma status (Business Requirement Two), alongside predictive model performance and interpretation:
   * Overview of the model objective (Business Requirement Two)
   * Overview of ML pipelines used and insights into model performance
+  * Note, the Widget input fields for relevant features for deriving asthma status was not included due to success metrics not being met
 
 ## User Stories
 
