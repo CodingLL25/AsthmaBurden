@@ -95,7 +95,7 @@ def page_asthma_status_study_body():
     st.success(
         "One categorical variables was significantly correlated with asthma "
         "status. This could relate to the specific type of asthma the patient "
-        "has been diagnosed with."
+        "has been diagnosed with (exercise induced)."
     )
 
     # Correlation data - binary variables
