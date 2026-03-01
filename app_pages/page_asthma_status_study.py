@@ -93,7 +93,7 @@ def page_asthma_status_study_body():
     # Correlation data - continuous variables
     continuous_results_df = continuous_significance(df_updated)
 
-    st.write(
+    st.error(
         "No continuous variables were significantly correlated."
     )
 
