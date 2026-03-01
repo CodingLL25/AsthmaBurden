@@ -26,7 +26,7 @@ def page_project_hypothesis_body():
         """
     )
 
-    st.write("""
+    st.success("""
         The feature-target correlation matrix shows generally weak linear
         relationships between individual features and asthma risk, with
         correlation values close to zero. However, some patterns align with
