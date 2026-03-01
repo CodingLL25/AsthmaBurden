@@ -1,6 +1,10 @@
 import streamlit as st
 
 def page_summary_body():
+    """ 
+    Streamlit page summarising the project jargon, information and business
+    requirements.
+    """
     st.title("Project Summary")
     # Overview of key words
     st.info(

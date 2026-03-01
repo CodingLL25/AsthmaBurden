@@ -1,6 +1,9 @@
 import streamlit as st
 
 def page_project_hypothesis_body():
+    """ 
+    Streamlit page for the project/study hypotheses.
+    """
     st.title("Project Hypothesis and Validation")
 
     st.markdown(

@@ -23,6 +23,9 @@ df = df.drop(columns=["PatientID", "DoctorInCharge"], errors="ignore")
 
 
 def page_asthma_status_study_body():
+    """ 
+    Streamlit page for the exploratory data analysis.
+    """
     st.title("Asthma Status Study")
 
     # Overview of page
