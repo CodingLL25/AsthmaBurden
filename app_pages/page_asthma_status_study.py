@@ -4,10 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from src.data_management import load_patient_data
-
-
-sns.set_style("whitegrid")
-
 from scipy.stats import (
     chi2_contingency,
     fisher_exact,
@@ -16,6 +12,9 @@ from scipy.stats import (
     shapiro,
 )
 
+
+sns.set_style("whitegrid")
+
 #  Load data and clean
 df = load_patient_data()
 df = df.astype({"Age": "float64"})
@@ -23,7 +22,7 @@ df = df.drop(columns=["PatientID", "DoctorInCharge"], errors="ignore")
 
 
 def page_asthma_status_study_body():
-    """ 
+    """
     Streamlit page for the exploratory data analysis.
     """
     st.title("Asthma Status Study")
@@ -108,12 +107,12 @@ def page_asthma_status_study_body():
                 {"statistic": "{:.3f}", "p-value": "{:.4f}"}
             )
         )
-    
+
     # Feature-Target correlation
     st.write(
         "Additional analyses were performed to assess the linear relationships"
-        " between features and the target variable using correlation analysis. "
-        "A feature–target correlation plot was generated to evaluate the "
+        " between features and the target variable using correlation analysis."
+        " A feature–target correlation plot was generated to evaluate the "
         "strength and direction of associations, as well as to explore "
         "potential multicollinearity among predictors. This provided an "
         "alternative route for assessing meaninful relationships with the "
@@ -132,6 +131,7 @@ def page_asthma_status_study_body():
         " possibly reflecting the specific asthma subtype diagnosed."
         "While chest tightness shows the strongest negative correlation. "
     )
+
 
 # Functions for the charts
 def violin_plots(df):
@@ -337,11 +337,11 @@ def feature_target_correlation_plot(df_updated):
     """
     features = df_updated.drop(["Diagnosis"], axis=1)
     target = df_updated["Diagnosis"]
-    
+
     correlation_matrix = features.corrwith(target)
     fig, ax = plt.subplots(figsize=(8, 6))
     corr_df = pd.DataFrame(correlation_matrix, columns=["Correlation"])
-    
+
     sns.heatmap(
         corr_df,
         annot=True,
@@ -349,6 +349,6 @@ def feature_target_correlation_plot(df_updated):
         cbar=True,
         ax=ax
     )
-    
+
     ax.set_title("Feature-Target Correlation Matrix", fontsize=14)
     st.pyplot(fig)
