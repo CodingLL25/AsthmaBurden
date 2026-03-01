@@ -51,7 +51,7 @@ def page_predict_asthma_model_body():
     """)
 
     st.write("### Pipelines")
-    st.write(" * Pipeline one: Data cleaning and feature engineering")
+    st.write(" * Pipeline One: Data cleaning and feature engineering")
     st.write(asthma_pipeline_dc_fe)
 
     st.write("* Pipeline Two: Feature scaling and modeling")
@@ -74,7 +74,7 @@ def page_predict_asthma_model_body():
     )
 
     st.write("### Performance summary")
-    st.error(""""
+    st.error("""
         Both metrics did not meet success criteria:
 
         - Train set: Recall = 0.53, Precision = 0.07

@@ -27,14 +27,18 @@ def page_project_hypothesis_body():
         correlation values close to zero. However, some patterns align with
         our four key hypotheses, providing initial quantitative support for
         clinical and environmental factors related to asthma:
-            - **Hypothesis 1 (H1):** Lung function metrics (LungFunctionFEV1
+
+        - Hypothesis 1 (H1): Lung function metrics (LungFunctionFEV1
             and LungFunctionFVC) show a slight positive correlation with the
             target, suggesting poorer lung function relates to asthma status.
-            - **Hypothesis 2 (H2):** Symptoms like Wheezing show weak positive
+
+        - Hypothesis 2 (H2): Symptoms like Wheezing show weak positive
             correlation (0.027), while others have minimal correlations.
-            - **Hypothesis 3 (H3):** Smoking has a small negative correlation,
+
+        - Hypothesis 3 (H3): Smoking has a small negative correlation,
             suggesting a subtle relationship with asthma.
-            - **Hypothesis 4 (H4):** Environmental exposures such as
+
+        - Hypothesis 4 (H4): Environmental exposures such as
             DustExposure show mild negative correlation.
 
         Overall, these correlation results aligned with our hypotheses.

@@ -29,7 +29,7 @@ def page_asthma_status_study_body():
 
     # Overview of page
     st.info("""
-        Asthma is a prevalent, burdensom disease with high prevalence.
+        Asthma is a prevalent, burdensome disease with high prevalence.
         To help clinicians and researchers understand asthma further,
         this **Athma Status Study** focuses on answering
         **Business Requirement One**. Business requirement one is focused on
@@ -51,7 +51,7 @@ def page_asthma_status_study_body():
     # Check distribution of the data
     st.write(
         "The dataset contains a multitude of variables for analysis. "
-        "This included 10 numeric and 16 binary variables (PatientID and ) "
+        "This included 10 numeric and 16 binary variables (PatientID and "
         "DoctorInCharge removed). "
         "Distributions were analysed to identify outliers. "
     )
