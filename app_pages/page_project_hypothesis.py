@@ -27,3 +27,9 @@ def page_project_hypothesis_body():
         "data analysis. None of the initial hypotheses were strongly supported "
         "by the data, indicating the need for further investigation."
     )
+
+    st.success(
+        "However, the feature-correlaton plot showed more meaninful "
+        "correlations between asthma and the features. This included clinical "
+        "factors such as FEV1 and FVC. "
+    )
