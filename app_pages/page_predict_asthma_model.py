@@ -50,7 +50,8 @@ def page_predict_asthma_model_body():
     )
 
     st.write("### Pipelines")
-    st.write(" * The first is responsible for data cleaning and feature engineering.")
+    st.write(" * The first is responsible for data cleaning and feature "
+            "engineering.")
     st.write(asthma_pipeline_dc_fe)
 
     st.write("* The second is for feature scaling and modelling.")
