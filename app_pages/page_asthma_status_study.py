@@ -28,15 +28,15 @@ def page_asthma_status_study_body():
     st.title("Asthma Status Study")
 
     # Overview of page
-    st.info(
-        "Asthma is a prevalent, burdensom disease with high prevalence. "
-        "To help clinicians and researchers understand asthma further, "
-        "this **Athma Status Study** focuses on answering"
-        " **Business Requirement One**. Business requirement one is focused on"
-        " identifying which factors are most correlated with asthma diagnosis."
-        " To undersand such relationships, **visual** and **statistical** "
-        "analyses were performed. "
-    )
+    st.info("""
+        Asthma is a prevalent, burdensom disease with high prevalence.
+        To help clinicians and researchers understand asthma further,
+        this **Athma Status Study** focuses on answering
+        **Business Requirement One**. Business requirement one is focused on
+        identifying which factors are most correlated with asthma diagnosis.
+        To undersand such relationships, **visual** and **statistical**
+        analyses were performed.
+    """)
 
     if st.checkbox("Inspect Patient data"):
         st.write(
@@ -62,22 +62,24 @@ def page_asthma_status_study_body():
     if st.checkbox("Distribution of categorical data"):
         bar_plots(df)
 
-    st.success(
-        "No outliers were noted for numeric features. Additionally,  "
-        "descriptive statistics for categorical variables showed no outliers "
-        "(data not shown). However, for age and ethnicity, base sizes were "
-        "small for specific groups, meaning they needed to be combined.\n"
-        "Note, age was categorised as integer variable (amended to float)\n\n"
-    )
+    st.success("""
+        No outliers were noted for numeric features. Additionally,
+        descriptive statistics for categorical variables showed no outliers
+        (data not shown). However, for age and ethnicity, base sizes were
+        small for specific groups, meaning they needed to be combined.
+
+        Note, age was categorised as integer variable (amended to float).
+    """)
 
     # Correlation study
-    st.write(
-        "* A correlation study was conducted to better understand the "
-        "relationship between the variables and asthma diagnosis. \n"
-        "However, due to the small pool of asthma patients the findings "
-        "were limited (imbalanced sample).\n\n"
-        "No continuous variables were significantly correlated."
-    )
+    st.write("""
+        * A correlation study was conducted to better understand the
+        relationship between the variables and asthma diagnosis.
+        However, due to the small pool of asthma patients the findings
+        were limited (imbalanced sample).
+
+        No continuous variables were significantly correlated.
+    """)
 
     # Updated data frame
     df_updated = process_categorical(df)
@@ -92,11 +94,11 @@ def page_asthma_status_study_body():
             )
         )
 
-    st.success(
-        "One categorical variables was significantly correlated with asthma "
-        "status. This could relate to the specific type of asthma the patient "
-        "has been diagnosed with (exercise induced)."
-    )
+    st.success("""
+        One categorical variables was significantly correlated with asthma
+        status. This could relate to the specific type of asthma the patient
+        has been diagnosed with (exercise induced).
+    """)
 
     # Correlation data - binary variables
     binary_results_df = binary_significance(df_updated)
@@ -109,28 +111,29 @@ def page_asthma_status_study_body():
         )
 
     # Feature-Target correlation
-    st.write(
-        "Additional analyses were performed to assess the linear relationships"
-        " between features and the target variable using correlation analysis."
-        " A feature–target correlation plot was generated to evaluate the "
-        "strength and direction of associations, as well as to explore "
-        "potential multicollinearity among predictors. This provided an "
-        "alternative route for assessing meaninful relationships with the "
-        "target feature."
-    )
+    st.write("""
+        Additional analyses were performed to assess the linear relationships
+        between features and the target variable using correlation analysis.
+        A feature–target correlation plot was generated to evaluate the
+        strength and direction of associations, as well as to explore
+        potential multicollinearity among predictors. This provided an
+        alternative route for assessing meaninful relationships with the
+        target feature.
+    """)
 
     if st.checkbox("Feature-Target Correlation:"):
         st.dataframe(
             feature_target_correlation_plot(df_updated)
         )
 
-    st.success(
-        "Most features show very weak correlations with asthma status, "
-        "indicating limited linear relationships.\n\n "
-        "Exercise-induced symptoms has the strongest positive correlation, "
-        " possibly reflecting the specific asthma subtype diagnosed."
-        "While chest tightness shows the strongest negative correlation. "
-    )
+    st.success("""
+        Most features show very weak correlations with asthma status,
+        indicating limited linear relationships.
+
+        Exercise-induced symptoms has the strongest positive correlation,
+        possibly reflecting the specific asthma subtype diagnosed.
+        While chest tightness shows the strongest negative correlation.
+    """)
 
 
 # Functions for the charts

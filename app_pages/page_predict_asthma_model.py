@@ -38,23 +38,23 @@ def page_predict_asthma_model_body():
         "/y_test.csv").values
 
     st.write("## Predicting Asthma Status")
-    st.info(
-        "Business requirement two was to develop a predictive model that "
-        "identifies patients with asthma within a highly imbalanced dataset. "
-        "Key metrics were defined at project kick-off. The aim was to provide "
-        "stakeholders with a tool for predicting asthma status to help guide "
-        "clinical decisions and so forth.\n\n"
-        "Success was defined as:\n"
-        "- Recall for asthma ≥ 0.80 (minimise false negatives)\n"
-        "- Precision for asthma ≥ 0.60 (minimise false positives)"
-    )
+    st.info("""
+        Business requirement two was to develop a predictive model that
+        identifies patients with asthma within a highly imbalanced dataset.
+        Key metrics were defined at project kick-off. The aim was to provide
+        stakeholders with a tool for predicting asthma status to help guide
+        clinical decisions and so forth.
+
+        Success was defined as:
+        - Recall for asthma ≥ 0.80 (minimise false negatives)
+        - Precision for asthma ≥ 0.60 (minimise false positives)
+    """)
 
     st.write("### Pipelines")
-    st.write(" * The first is responsible for data cleaning and feature "
-            "engineering.")
+    st.write(" * Pipeline one: Data cleaning and feature engineering")
     st.write(asthma_pipeline_dc_fe)
 
-    st.write("* The second is for feature scaling and modelling.")
+    st.write("* Pipeline Two: Feature scaling and modeling")
     st.write(asthma_pipeline_model)
 
     st.write("### Feature Importance")
@@ -74,17 +74,19 @@ def page_predict_asthma_model_body():
     )
 
     st.write("### Performance summary")
-    st.error(
-        "Both metrics did not meet success criteria:\n\n"
-        "- Train set: Recall = 0.53, Precision: 0.07.\n"
-        "- Test set: Recall = 0.49, Precision: 0.06.\n\n"
-        "Precision was low due to a high number of false positives meaning "
-        "the model predicts a high number of incorrect asthma cases.\n"
-        "Recall was moderate, with round half actual asthma cases being "
-        "identified.\n\n"
-        "However, due to the inability to identify asthma cases, this model "
-        "was not utilised to create a prediction tool for stakeholders. "
-        "A more in depth dataset, capturing more specific features related to "
-        "asthma, as well as more asthma patients would be required to "
-        "investigate this further."
-    )
+    st.error(""""
+        Both metrics did not meet success criteria:
+
+        - Train set: Recall = 0.53, Precision = 0.07
+        - Test set: Recall = 0.49, Precision = 0.06
+
+        Precision was low due to a high number of false positives, meaning the
+        model predicts a high number of incorrect asthma cases. Recall was
+        moderate, with around half of actual asthma cases being identified.
+
+        However, due to the inability to reliably identify asthma cases, this
+        model was not utilised to create a prediction tool for stakeholders.
+        A more in-depth dataset, capturing more specific features related to
+        asthma, as well as more asthma patients, would be required to
+        investigate this further.
+    """)
