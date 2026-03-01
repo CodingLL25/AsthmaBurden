@@ -37,7 +37,8 @@ def page_predict_asthma_model_body():
         f"outputs/modeling_pipeline/predict_asthma/{version}"
         "/y_test.csv").values
 
-    st.write("## Predicting Asthma Status")
+    st.write("## Overview")
+    st.write("---")
     st.info("""
         Business requirement two was to develop a predictive model that
         identifies patients with asthma within a highly imbalanced dataset.
@@ -51,6 +52,12 @@ def page_predict_asthma_model_body():
     """)
 
     st.write("### Pipelines")
+    st.write("---")
+    st.info("""
+        These pipelines process the asthma dataset in two main stages. The
+        first pipeline handles data cleaning and feature engineering, while
+        the focuses on feature scaling and modeling.)
+    """)
     st.write(" * Pipeline One: Data cleaning and feature engineering")
     st.write(asthma_pipeline_dc_fe)
 
@@ -58,6 +65,13 @@ def page_predict_asthma_model_body():
     st.write(asthma_pipeline_model)
 
     st.write("### Feature Importance")
+    st.write("---")
+    st.info("""
+        The full dataset contained 28 features, of which two were removed
+        entirely (PatientID and DoctorInCharge). The model was run initially
+        with all features included. However, was optimised to include those of
+        importance only. 
+    """)
     st.write("The model was trained using the following features:")
     st.write(X_train.columns.to_list())
     st.image(asthma_feature_importance)
@@ -70,6 +84,7 @@ def page_predict_asthma_model_body():
 
     # Pipeline performance
     st.write("### Pipeline Performance")
+    st.write("---")
     clf_performance(
         X_train=X_train,
         y_train=y_train,
@@ -80,6 +95,7 @@ def page_predict_asthma_model_body():
     )
 
     st.write("### Performance summary")
+    st.write("---")
     st.error("""
         Both metrics did not meet success criteria:
 
