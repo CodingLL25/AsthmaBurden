@@ -6,7 +6,7 @@ from src.machine_learning.evaluate_clf import clf_performance
 
 
 def page_predict_asthma_model_body():
-    """ 
+    """
     Streamlit page for predicting asthma status (diagnosis).
     """
     st.title("Machine Learning: Predicting Asthma Status")
@@ -14,23 +14,28 @@ def page_predict_asthma_model_body():
     # Load prediction pipeline
     version = 'v1'
     asthma_pipeline_dc_fe = load_pkl_file(
-        f'outputs/modeling_pipeline/predict_asthma/{version}/'
-        'clf_pipeline_data_cleaning_feat_eng.pkl'
+        f"outputs/modeling_pipeline/predict_asthma/{version}/"
+        "clf_pipeline_data_cleaning_feat_eng.pkl"
     )
     asthma_pipeline_model = load_pkl_file(
-        f'outputs/modeling_pipeline/predict_asthma/{version}/clf_pipeline_model.pkl'
+        f"outputs/modeling_pipeline/predict_asthma/{version}/"
+        "clf_pipeline_model.pkl"
     )
     asthma_feature_importance = plt.imread(
-        f"outputs/modeling_pipeline/predict_asthma/{version}/features_importance.png")
+        f"outputs/modeling_pipeline/predict_asthma/{version}/"
+        "features_importance.png"
+    )
 
     X_train = pd.read_csv(
         f"outputs/modeling_pipeline/predict_asthma/{version}/X_train.csv")
     X_test = pd.read_csv(
         f"outputs/modeling_pipeline/predict_asthma/{version}/X_test.csv")
     y_train = pd.read_csv(
-        f"outputs/modeling_pipeline/predict_asthma/{version}/y_train.csv").values
+        f"outputs/modeling_pipeline/predict_asthma/{version}"
+        "/y_train.csv").values
     y_test = pd.read_csv(
-        f"outputs/modeling_pipeline/predict_asthma/{version}/y_test.csv").values
+        f"outputs/modeling_pipeline/predict_asthma/{version}"
+        "/y_test.csv").values
 
     st.write("## Predicting Asthma Status")
     st.info(
