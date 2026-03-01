@@ -78,7 +78,7 @@ To better understand the factors influencing asthma risk, four key hypotheses we
 | H3: Smoking exposure is associated with asthma | Smoking and secondhand smoke irritate airways and can exacerbate or trigger asthma symptoms | Compare SmokingHistory by Diagnosis; statistical tests for association |
 | H4: Higher exposure to dust or pollutants is associated with higher asthma risk | Environmental irritants can trigger asthma attacks or chronic inflammation | Compare PollutionExposure, PollenExposure and DustExposure by Diagnosis; statistical test for differences |
 
-## Data Visualization and ML tasks for the projects business requirements
+## Rationale to map the business requirements to the data visualisation and machine learning tasks
 
 ### Business Requirement One
 
@@ -200,7 +200,6 @@ Code was passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with n
 
 ### App pages
 
-* Asthma Status Study: legend for the categorical box plots does not align with the figure.
 * Asthma Status Study: empty table showing at when "Feature-Target Correlation" selected.
 * Project Hypotheses: markdown for hypotheses table exceeds 79 characters. Not a bug but a formatting issue.
 

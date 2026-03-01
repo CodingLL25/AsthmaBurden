@@ -8,6 +8,24 @@ def page_summary_body():
     """
     st.title("Project Summary")
 
+    st.info("""
+        In the healthcare sector, effective early detection of conditions like 
+        asthma is critical to improving patient outcomes and reducing 
+        preventable complications. Undiagnosed asthma can lead to severe 
+        health setbacks and increased healthcare utilization. 
+        The Asthma Burden project aims to help healthcare providers better 
+        understand the drivers of asthma risk and proactively identify 
+        patients who may have undiagnosed or under-recognized asthma.
+
+        From a business perspective, this project helps healthcare institutions 
+        identify high-risk patients early, make data-driven care decisions,
+        and provide targeted interventions for at-risk individuals. 
+        These insights support improved clinical outcomes, operational efficiency, 
+        and resource allocation.
+        
+        Note, this project was created as part of a full stack diploma.
+    """)
+
     # Overview of key words
     st.info("""
         **Project Terms & Jargon**

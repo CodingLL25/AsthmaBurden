@@ -62,6 +62,12 @@ def page_predict_asthma_model_body():
     st.write(X_train.columns.to_list())
     st.image(asthma_feature_importance)
 
+    st.info("""
+        As identified during exploratory data analysis, exercise induced had 
+        the greatest, positive correlation with asthma. Followed by wheezing,
+        and gender. Smoking had the greatest negative correlation with asthma.
+    """)
+
     # Pipeline performance
     st.write("### Pipeline Performance")
     clf_performance(

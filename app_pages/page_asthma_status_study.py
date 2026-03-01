@@ -56,12 +56,12 @@ def page_asthma_status_study_body():
     st.write("---")
 
     # Check distribution of the data
-    st.write(
-        "The dataset contains a multitude of variables for analysis. "
-        "This included 10 numeric and 16 binary variables (PatientID and "
-        "DoctorInCharge removed). "
-        "Distributions were analysed to identify outliers. "
-    )
+    st.write("""
+        The dataset contains a multitude of variables for analysis. This 
+        included 10 numeric and 16 binary variables (PatientID and 
+        DoctorInCharge removed). Distributions were analysed to identify 
+        outliers. 
+    """)
 
     if st.checkbox("Distribution of continuous data"):
         st.image(eda_violin_plots)
@@ -70,12 +70,11 @@ def page_asthma_status_study_body():
         st.image(eda_boxplots)
 
     st.success("""
-        No outliers were noted for numeric features. Additionally,
-        descriptive statistics for categorical variables showed no outliers
-        (data not shown). However, for age and ethnicity, base sizes were
-        small for specific groups, meaning they needed to be combined.
-
-        Note, age was categorised as integer variable (amended to float).
+        No outliers were noted for numeric features (violin plots did not have
+        long tails). Additionally, descriptive statistics for categorical 
+        variables showed no outliers(data not shown). However, for age and 
+        ethnicity, base sizes were small for specific groups, meaning they 
+        needed to be combined.
     """)
 
     # Correlation study

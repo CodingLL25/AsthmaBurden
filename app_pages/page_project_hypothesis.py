@@ -7,10 +7,15 @@ def page_project_hypothesis_body():
     """
     st.title("Project Hypothesis and Validation")
 
+    st.info("""
+        To better understand the factors influencing asthma risk, four key 
+        hypotheses were formulated based on domain knowledge and the available 
+        data. Each hypothesis focuses on a variable expected to impact asthma
+        status.
+    """)
+
     st.markdown(
         """
-        To better understand the factors influencing asthma risk, four key hypotheses were formulated based on domain knowledge and the available data. Each hypothesis focuses on a variable expected to impact asthma status.
-
         | Hypothesis | Rationale | Validation |
         |------------|-----------|------------|
         | **H1: Poorer clinical factors (lower LungFunctionFEV1 or LungFunctionFVC) is associated with asthma** | Reduced airflow and obstruction are classic features of asthma | Compare distributions of lung function metrics by Diagnosis; use of t-tests or Mann-Whitney to confirm differences |
